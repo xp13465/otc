@@ -1,0 +1,1318 @@
+[ 2016-04-12T13:44:45+08:00 ] 127.0.0.1 /Guest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.018001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.019001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.058003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.058003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-12T13:44:45+08:00 ] 127.0.0.1 /guest/access/getUserNodeList?q=1460439885625
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.node_id,n.name,n.pid,n.module,n.iconCls,n.group,n.url FROM otc_auth_role_node as r INNER JOIN otc_auth_node as n on n.id = r.node_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80') AND n.type = 2 ORDER BY n.sort asc, n.id desc  [ RunTime:0.0020s ]
+
+[ 2016-04-12T13:44:47+08:00 ] 127.0.0.1 /Guest/Cust/myivs_dnf?q=1460439886405
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0060s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0080s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_cust_crm` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0100s ]
+SQL: SELECT ci.id,ci.cod_ctl_id,ci.product_code,ci.amt_ivs,ci.ctl_ivs_cnt,ci.amt_int_total,ci.pos_order,ci.cod_ivs_status,ci.dat_create as dat_modify,c.title,c.code,ci.amt_time,d.cod_period,b.nam_cust_real,b.cod_cust_id_no,ou.realname as user_name,od.name as department_name FROM otc_cf_ivs ci INNER JOIN otc_cust_person b on ci.cod_cust_id=b.cod_cust_id INNER JOIN otc_cf_mast c on ci.cod_cf_id=c.id INNER JOIN otc_cf_ctl d on ci.cod_ctl_id=d.id left JOIN otc_user as ou on ou.id=ci.usr_create left JOIN otc_department as od on od.id=ou.department_id  WHERE ( operating = 1 ) ORDER BY ci.dat_create desc LIMIT 0,10   [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_cf_ivs ci INNER JOIN otc_cust_person b on ci.cod_cust_id=b.cod_cust_id INNER JOIN otc_cf_mast c on ci.cod_cf_id=c.id INNER JOIN otc_cf_ctl d on ci.cod_ctl_id=d.id left JOIN otc_user as ou on ou.id=ci.usr_create left JOIN otc_department as od on od.id=ou.department_id  WHERE ( operating = 1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [8] Use of undefined constant time - assumed 'time' D:\WEB\192.168.1.126\otc\Application\Guest\Model\CustCrmModel.class.php ç¬¬ 123 è¡Œ.
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0070s ]
+NOTIC: [8] Use of undefined constant time - assumed 'time' D:\WEB\192.168.1.126\otc\Application\Guest\Model\CustCrmModel.class.php ç¬¬ 123 è¡Œ.
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+NOTIC: [8] Use of undefined constant time - assumed 'time' D:\WEB\192.168.1.126\otc\Application\Guest\Model\CustCrmModel.class.php ç¬¬ 123 è¡Œ.
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0050s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0040s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0050s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0050s ]
+NOTIC: [8] Use of undefined constant time - assumed 'time' D:\WEB\192.168.1.126\otc\Application\Guest\Model\CustCrmModel.class.php ç¬¬ 123 è¡Œ.
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0050s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0050s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0040s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+NOTIC: [8] Use of undefined constant time - assumed 'time' D:\WEB\192.168.1.126\otc\Application\Guest\Model\CustCrmModel.class.php ç¬¬ 123 è¡Œ.
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0050s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0050s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0040s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+NOTIC: [8] Use of undefined constant time - assumed 'time' D:\WEB\192.168.1.126\otc\Application\Guest\Model\CustCrmModel.class.php ç¬¬ 123 è¡Œ.
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0040s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0050s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0040s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0040s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0050s ]
+NOTIC: [8] Use of undefined constant time - assumed 'time' D:\WEB\192.168.1.126\otc\Application\Guest\Model\CustCrmModel.class.php ç¬¬ 123 è¡Œ.
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0040s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0050s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0050s ]
+NOTIC: [8] Use of undefined constant time - assumed 'time' D:\WEB\192.168.1.126\otc\Application\Guest\Model\CustCrmModel.class.php ç¬¬ 123 è¡Œ.
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0040s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0050s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0040s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0050s ]
+NOTIC: [8] Use of undefined constant time - assumed 'time' D:\WEB\192.168.1.126\otc\Application\Guest\Model\CustCrmModel.class.php ç¬¬ 123 è¡Œ.
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0040s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0040s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+NOTIC: [8] Use of undefined constant time - assumed 'time' D:\WEB\192.168.1.126\otc\Application\Guest\Model\CustCrmModel.class.php ç¬¬ 123 è¡Œ.
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0050s ]
+
+[ 2016-04-12T13:45:22+08:00 ] 127.0.0.1 /guest/Invest/prewLoanpdf?ivsid=1941
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0080s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0090s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '1941'  [ RunTime:0.0040s ]
+NOTIC: [8] Undefined offset: 0 D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 125 è¡Œ.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-12T13:45:26+08:00 ] 127.0.0.1 /guest/access/getUserNodeList?q=1460439925971
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0060s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.node_id,n.name,n.pid,n.module,n.iconCls,n.group,n.url FROM otc_auth_role_node as r INNER JOIN otc_auth_node as n on n.id = r.node_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80') AND n.type = 2 ORDER BY n.sort asc, n.id desc  [ RunTime:0.0030s ]
+
+[ 2016-04-12T13:45:36+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0090s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.075005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.075005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-12T13:47:39+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0090s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0050s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-12T14:11:39+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+
+
+[ 2016-04-12T14:12:00+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+
+
+[ 2016-04-12T14:13:59+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+
+
+[ 2016-04-12T14:14:54+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+
+
+[ 2016-04-12T14:20:09+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+
+
+[ 2016-04-12T14:34:02+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0060s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0080s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0050s ]
+
+[ 2016-04-12T14:34:08+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0060s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0060s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T14:54:39+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0080s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: amt_int_total D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+NOTIC: [8] Undefined index: dat_modify D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+NOTIC: [8] Undefined index: rat_cf_inv_min D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+NOTIC: [8] Undefined index: amt_time D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+
+[ 2016-04-12T14:54:46+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0050s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: amt_int_total D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+NOTIC: [8] Undefined index: dat_modify D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+NOTIC: [8] Undefined index: rat_cf_inv_min D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+NOTIC: [8] Undefined index: amt_time D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+
+[ 2016-04-12T14:54:54+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0060s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0080s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: amt_int_total D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+NOTIC: [8] Undefined index: dat_modify D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+NOTIC: [8] Undefined index: rat_cf_inv_min D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+NOTIC: [8] Undefined index: amt_time D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+
+[ 2016-04-12T14:54:56+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0110s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0090s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: amt_int_total D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+NOTIC: [8] Undefined index: dat_modify D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+NOTIC: [8] Undefined index: rat_cf_inv_min D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+NOTIC: [8] Undefined index: amt_time D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+
+[ 2016-04-12T14:55:15+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0050s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: amt_int_total D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+NOTIC: [8] Undefined index: dat_modify D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+NOTIC: [8] Undefined index: rat_cf_inv_min D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+NOTIC: [8] Undefined index: amt_time D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 111 è¡Œ.
+
+[ 2016-04-12T14:55:34+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0060s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T14:58:20+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0070s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0050s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:00:08+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0050s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:00:17+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0070s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:00:33+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0060s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0070s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:02:38+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0050s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0050s ]
+
+[ 2016-04-12T15:03:33+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0040s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0030s ]
+
+[ 2016-04-12T15:04:15+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0050s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:04:24+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0110s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0100s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0100s ]
+
+[ 2016-04-12T15:04:29+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0050s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:06:59+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0080s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0050s ]
+
+[ 2016-04-12T15:08:01+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0090s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:08:29+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0080s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0050s ]
+
+[ 2016-04-12T15:08:45+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0060s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:09:10+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0060s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0090s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:09:50+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0080s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0050s ]
+
+[ 2016-04-12T15:09:54+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0050s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:11:07+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0080s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0060s ]
+
+[ 2016-04-12T15:11:46+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0060s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0030s ]
+
+[ 2016-04-12T15:18:27+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0060s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:18:49+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0050s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0030s ]
+
+[ 2016-04-12T15:19:22+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0050s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:19:40+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0060s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:19:58+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0060s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0070s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0060s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:20:24+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0090s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0050s ]
+
+[ 2016-04-12T15:21:36+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0060s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0070s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0050s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:25:25+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0100s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0090s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0050s ]
+
+[ 2016-04-12T15:28:01+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0080s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0100s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0090s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0050s ]
+
+[ 2016-04-12T15:28:10+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0080s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0090s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:30:06+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0110s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+
+[ 2016-04-12T15:30:13+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0080s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0080s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0070s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0060s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0060s ]
+
+[ 2016-04-12T15:39:20+08:00 ] 127.0.0.1 /guest/invest/prewLoanpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0090s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-12T15:39:40+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0090s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0050s ]
+
+[ 2016-04-12T15:39:49+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0080s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:39:58+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0050s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:43:41+08:00 ] 127.0.0.1 /guest/invest/prewLoanpdf?ivsid=31&times=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0110s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0130s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0120s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0060s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-12T15:43:51+08:00 ] 127.0.0.1 /guest/invest/prewLoanpdf?ivsid=31&times=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0160s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0140s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0220s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0170s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0140s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-12T15:51:42+08:00 ] 127.0.0.1 /guest/invest/prewDetailpdf?ivsid=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0080s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+
+[ 2016-04-12T15:51:56+08:00 ] 127.0.0.1 /guest/invest/prewCheckacc?ivsid=31&times=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0290s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0080s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0120s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0100s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0070s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.059003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-04-12T15:53:21+08:00 ] 127.0.0.1 /guest/invest/prewCheckacc?ivsid=31&times=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0080s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-12T15:53:30+08:00 ] 127.0.0.1 /guest/invest/prewCheckacc?ivsid=31&times=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0040s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0070s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0050s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-12T15:54:47+08:00 ] 127.0.0.1 /guest/invest/prewCheckacc?ivsid=31&times=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0060s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-12T15:54:54+08:00 ] 127.0.0.1 /guest/invest/prewCheckacc?ivsid=31&times=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0060s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0040s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0060s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0040s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-12T15:55:21+08:00 ] 127.0.0.1 /guest/invest/prewCheckacc?ivsid=31&times=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0080s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0100s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php ç¬¬ 21 è¡Œ.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0050s ]
+SQL: SELECT g.*,concat(f.title,i.cod_period,'æœŸ') as periodname,a.*,(c.startdate) as z_startdate,(c.enddate) as z_enddate,(c.period) as z_period,(c.amt_cf_inv_price) as z_amt_cf_inv_price,(c.product_name) as z_product_name,(c.address) as z_address,(c.borrower) as z_borrower,(c.cod_card_type) as z_cod_card_type,c.attr,(c.cod_card_no) as z_cod_card_no,(c.telephone) as z_telephone,c.needpay,c.account,c.accbank,c.accountno,c.amt_cf_inv_price,c.transdebt,c.startdate,c.enddate,c.use,d.nam_cust_real as k_nam_cust_real,d.cod_cust_id_type as k_cod_cust_id_type,d.cod_cust_id_no as k_cod_cust_id_no,e.address as k_address,d.tel as k_tel FROM otc_cf_ivs a inner JOIN otc_cl_ivs b on a.id =b.cod_cf_ivs_id inner JOIN otc_cf_mast f on b.cod_cf_id =f.id inner JOIN otc_cf_ctl i on b.cod_cf_ctl_id =i.id inner JOIN otc_cl_mast c on b.cod_cl_id =c.id inner JOIN otc_cust_person d on d.cod_cust_id =a.cod_cust_id inner JOIN otc_cust_crm e on e.cod_cust_id =a.cod_cust_id inner JOIN otc_capitalpool g on a.capitalid =g.id  WHERE a.id = '31'  [ RunTime:0.0080s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Uninitialized string offset: 0 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 214 è¡Œ.
+NOTIC: [8] Undefined offset: -1 D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php ç¬¬ 213 è¡Œ.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+

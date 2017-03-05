@@ -1,0 +1,104 @@
+body .speedRightClass .con .ul li {
+    padding: 0px 20px;
+}
+
+
+/*********竖屏 orientation : portrait *********/
+	@media screen and (min-height: 400px)  and (orientation : portrait) { 
+		body .userInfolistClass .list{
+		height: 70%;
+		overflow-y: auto;
+		}
+		
+	} 
+	 
+	@media screen and (max-width: 1201px)  and (orientation : portrait) { 
+		body .userInfolistClass .groupCon{
+		width:100%;
+		height:100%;
+		left: auto;
+		top: auto;
+		margin-left: auto;
+		margin-top: auto;
+		background: url(../images/desktop/bg_list.png) top center repeat-x #10234d;
+		} 		
+	}
+	
+	@media screen and (min-width: 900px)  and (orientation : portrait) { 
+		/* body .userInfolistClass .groupCon{ 
+			height: 800px;
+			margin-top: -400px;
+			background: url(../images/desktop/bg_list.png) top center repeat-x #10234d;
+		} */
+		body .crmInfoClass .groupCon {
+			width:100%;
+			height:100%;
+			left: auto;
+			top: auto;
+			margin-left: auto;
+			margin-top: auto;
+		} 
+		body .crmInfoClass .list {
+			height: 85%;
+		}
+	}
+ /*********横屏 orientation : landscape *********/
+	
+	
+	
+	
+	@media screen and (min-height: 900px)  and (orientation : landscape)  { 
+		body .userInfolistClass .groupCon{ 
+			height: 800px;
+			left: 50%;
+			top: 50%;
+			margin-top: -400px;
+			background: url(../images/desktop/bg_list.png) top center repeat-x #10234d;
+		} 
+		body .crmInfoClass .groupCon {
+			width: 1000px;
+			height:  700px;
+			margin-left: -500px;
+			margin-top: -350px;
+		}
+		body .userInfolistClass .list{
+			height: 540px;
+			overflow-y: auto;
+		}
+		body .crmInfoClass .list {
+			height: 580px;
+		}
+	}
+	@media screen and (max-height: 580px) and (orientation : landscape)  {   
+		
+		body .userInfolistClass .tit {
+			display:none	
+		}
+	}
+	@media screen and (max-height: 400px) and (orientation : landscape)  {   
+		body .userInfolistClass .tit {
+			display:none	
+		}
+		body .userInfolistClass .list {
+			height: 140px;
+		}
+	}
+	@media  screen and (max-width: 1201px)  and (orientation : landscape) { 
+		body .userInfolistClass .groupCon{
+		width:100%;
+		height:100%;
+		left: auto;
+		top: auto;
+		margin-left: auto;
+		margin-top: auto;
+		background: url(../images/desktop/bg_list.png) top center repeat-x #10234d;
+		}
+	}
+	@media  screen and (min-width: 1920px)  and (orientation : landscape)  { 
+		body {background: url(../images/desktop/bg.png);background-size: 100%;}
+	}
+	
+ 
+
+	
+ 

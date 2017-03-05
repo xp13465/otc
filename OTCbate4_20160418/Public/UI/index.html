@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
+	<script type="text/javascript" src="bower_components/moment-with-locales.js" ></script>
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+  	<script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+  	<script type="text/javascript" src="bower_components/angular-locale_zh-cn.js"></script>
+  	<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+  	<script type="text/javascript" src="bower_components/ng-dialog/js/ngDialog.min.js" ></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body ng-controller="mainCtrl">
+	<ul class="desktop clearfix">
+		<dl ng-click="showDemoFn()">
+			<dt><img src="images/big_01.png" alt=""></dt>
+			<dd>系统设置</dd>
+		</dl>
+		
+	</ul>
+
+
+	
+	<div demo-edit ng-cloak></div>
+	<script type="text/javascript">
+	  angular.bootstrap(document,['storeApp']);
+	  console.log(_.without([1, 2, 1, 0, 3, 1, 4], 0, 3));
+	</script>
+</body>
+</html>

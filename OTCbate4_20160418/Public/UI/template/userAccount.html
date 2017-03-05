@@ -1,0 +1,64 @@
+<div class="group userAccountClass" ng-if="userAccount">
+	<div class="groupBg"></div>
+	<div class="groupCon">
+		<span class="del" ng-click="closeAccountFn()">
+			<img src="/Public/UI/images/desktop/del_01.png" alt="">
+		</span>
+		<div class="title cen">
+			<img src="/Public/UI/images/desktop/edit.png" alt="">
+		</div>
+		<ul class="ul">
+			<li class="clearfix cur">
+				<label>
+					
+				</label>
+				<input type="text" ng-model="info.nam_cust_real" placeholder="用户姓名">
+			</li>
+			<li class="clearfix cur">
+				<label>
+					
+				</label>
+				<input type="text" ng-model="info.cod_cust_id_no" placeholder="身份证号">
+			</li>
+			<li class="clearfix cur">
+				<label>
+					
+				</label>
+				<input type="text" ng-model="info.tel" placeholder="手机号">
+			</li>
+			<li class="clearfix cur" style="margin-bottom:60px;">
+				<label>
+					
+				</label>
+				<input type="password" ng-model="info.password" placeholder="请输入登录密码 (6-12位数字字母符号组合)" ng-keyup="passwordRole($event)" onpaste="javascript:return false;" maxlength="12">
+				<div class="passwordList">
+					<dl ng-class="{role_one:role.role_one}">
+						<dt></dt>
+						<dd>弱</dd>
+					</dl>
+					<dl ng-class="{role_two:role.role_two}">
+						<dt></dt>
+						<dd>中</dd>
+					</dl>
+					<dl ng-class="{role_three:role.role_three}">
+						<dt></dt>
+						<dd>强</dd>
+					</dl>
+				</div>
+			</li>
+			<li class="clearfix cur">
+				<label>
+					
+				</label>
+				<input type="password" ng-model="info.repassword" placeholder="请再次输入密码">
+			</li>
+			
+		</ul>
+		<div class="btnBg">
+			<a href="javascript:;" class="btn" ng-click="add();">
+				创建CRM资料信息
+			</a>
+		</div>
+		<!-- <span ng-click="closeFn()">safhafafafahjfsjahfjashf</span> -->
+	</div>
+</div>

@@ -1,0 +1,2143 @@
+[ 2016-03-04T17:02:31+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-04T17:02:33+08:00 ] 127.0.0.1 /Admin/Access/getUserNodeList?_dc=1457082153246&page=1&start=0&limit=25
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT aa.role_id FROM otc_auth_access as aa left JOIN otc_auth_role as ar ON aa.role_id = ar.id  WHERE aa.uid = 1 AND ar.status = 1  [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0090s ]
+SQL: SELECT DISTINCT r.node_id,n.name,n.pid,n.module,n.iconCls,n.group,n.url FROM otc_auth_role_node as r INNER JOIN otc_auth_node as n on n.id = r.node_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80') AND n.type = 1 AND n.status = 1 ORDER BY n.sort asc, n.id desc  [ RunTime:0.0070s ]
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+
+[ 2016-03-04T17:02:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0040s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:02:42+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-04T17:02:44+08:00 ] 127.0.0.1 /Admin/Access/getUserNodeList?_dc=1457082164128&page=1&start=0&limit=25
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0110s ]
+SQL: SELECT aa.role_id FROM otc_auth_access as aa left JOIN otc_auth_role as ar ON aa.role_id = ar.id  WHERE aa.uid = 1 AND ar.status = 1  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.node_id,n.name,n.pid,n.module,n.iconCls,n.group,n.url FROM otc_auth_role_node as r INNER JOIN otc_auth_node as n on n.id = r.node_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80') AND n.type = 1 AND n.status = 1 ORDER BY n.sort asc, n.id desc  [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+
+[ 2016-03-04T17:02:45+08:00 ] 127.0.0.1 /Admin/Foundation/allFoundStatus/type/1?_dc=1457082165058
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0080s ]
+
+[ 2016-03-04T17:02:45+08:00 ] 127.0.0.1 /Admin/Access/getUserPermission
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT aa.role_id FROM otc_auth_access as aa left JOIN otc_auth_role as ar ON aa.role_id = ar.id  WHERE aa.uid = 1 AND ar.status = 1  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0080s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,n.permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0100s ]
+
+[ 2016-03-04T17:02:45+08:00 ] 127.0.0.1 /Admin/Foundation/getBufferFound?_dc=1457082165477
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0100s ]
+SQL: SELECT `id`,`name`,`holder`,`investment_type`,`total_amount`,`surplus_amount`,`status`,`memo`,`usr_create`,`dat_create` FROM `otc_capitalpool` WHERE `validflag` = 1 AND `usr_create` = 1  [ RunTime:0.0040s ]
+SQL: SELECT `id`,`name`,`holder`,`investment_type`,`total_amount`,`surplus_amount`,`status`,`memo`,`usr_create`,`dat_create` FROM `otc_capitalpool` WHERE `validflag` = 1 AND `usr_create` = 1 LIMIT 0,25   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:02:46+08:00 ] 127.0.0.1 /Admin/Foundation/cfMastSelect?_dc=1457082166345
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0110s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`title` FROM `otc_cf_mast` WHERE `cod_cf_status` <> 0  [ RunTime:0.0020s ]
+
+[ 2016-03-04T17:03:23+08:00 ] 127.0.0.1 /Admin/Message/getPublicMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0120s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+SQL: SELECT a.*,IF(ISNULL(b.id),0,1) as is_view FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) ORDER BY a.add_time desc LIMIT 0,2   [ RunTime:0.0140s ]
+
+[ 2016-03-04T17:03:24+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:03:28+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-04T17:03:29+08:00 ] 127.0.0.1 /Admin/Access/getUserNodeList?_dc=1457082209738&page=1&start=0&limit=25
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0110s ]
+SQL: SELECT aa.role_id FROM otc_auth_access as aa left JOIN otc_auth_role as ar ON aa.role_id = ar.id  WHERE aa.uid = 1 AND ar.status = 1  [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT r.node_id,n.name,n.pid,n.module,n.iconCls,n.group,n.url FROM otc_auth_role_node as r INNER JOIN otc_auth_node as n on n.id = r.node_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80') AND n.type = 1 AND n.status = 1 ORDER BY n.sort asc, n.id desc  [ RunTime:0.0060s ]
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+
+[ 2016-03-04T17:04:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0050s ]
+
+[ 2016-03-04T17:04:44+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-04T17:04:46+08:00 ] 127.0.0.1 /Admin/Access/getUserNodeList?_dc=1457082286051&page=1&start=0&limit=25
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT aa.role_id FROM otc_auth_access as aa left JOIN otc_auth_role as ar ON aa.role_id = ar.id  WHERE aa.uid = 1 AND ar.status = 1  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT r.node_id,n.name,n.pid,n.module,n.iconCls,n.group,n.url FROM otc_auth_role_node as r INNER JOIN otc_auth_node as n on n.id = r.node_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80') AND n.type = 1 AND n.status = 1 ORDER BY n.sort asc, n.id desc  [ RunTime:0.0070s ]
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+
+[ 2016-03-04T17:05:24+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0060s ]
+
+[ 2016-03-04T17:06:12+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-03-04T17:06:14+08:00 ] 127.0.0.1 /Admin/Access/getUserNodeList?_dc=1457082374786&page=1&start=0&limit=25
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT aa.role_id FROM otc_auth_access as aa left JOIN otc_auth_role as ar ON aa.role_id = ar.id  WHERE aa.uid = 1 AND ar.status = 1  [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT r.node_id,n.name,n.pid,n.module,n.iconCls,n.group,n.url FROM otc_auth_role_node as r INNER JOIN otc_auth_node as n on n.id = r.node_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80') AND n.type = 1 AND n.status = 1 ORDER BY n.sort asc, n.id desc  [ RunTime:0.0060s ]
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+
+[ 2016-03-04T17:06:16+08:00 ] 127.0.0.1 /Admin/Foundation/allFoundStatus/type/1?_dc=1457082375957
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0070s ]
+
+[ 2016-03-04T17:06:16+08:00 ] 127.0.0.1 /Admin/Access/getUserPermission
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0050s ]
+SQL: SELECT aa.role_id FROM otc_auth_access as aa left JOIN otc_auth_role as ar ON aa.role_id = ar.id  WHERE aa.uid = 1 AND ar.status = 1  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,n.permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+
+[ 2016-03-04T17:06:16+08:00 ] 127.0.0.1 /Admin/Foundation/getBufferFound?_dc=1457082376418
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`name`,`holder`,`investment_type`,`total_amount`,`surplus_amount`,`status`,`memo`,`usr_create`,`dat_create` FROM `otc_capitalpool` WHERE `validflag` = 1 AND `usr_create` = 1  [ RunTime:0.0040s ]
+SQL: SELECT `id`,`name`,`holder`,`investment_type`,`total_amount`,`surplus_amount`,`status`,`memo`,`usr_create`,`dat_create` FROM `otc_capitalpool` WHERE `validflag` = 1 AND `usr_create` = 1 LIMIT 0,25   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:06:19+08:00 ] 127.0.0.1 /Admin/Foundation/cfMastSelect?_dc=1457082379696
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0130s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0120s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0120s ]
+SQL: SELECT `id`,`title` FROM `otc_cf_mast` WHERE `cod_cf_status` <> 0  [ RunTime:0.0020s ]
+
+[ 2016-03-04T17:06:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0350s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0280s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0240s ]
+
+[ 2016-03-04T17:07:24+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0060s ]
+
+[ 2016-03-04T17:08:14+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:08:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:09:24+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:09:32+08:00 ] 127.0.0.1 /Admin/Foundation/allFoundStatus/type/1?_dc=1457082572605
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0120s ]
+
+[ 2016-03-04T17:09:32+08:00 ] 127.0.0.1 /Admin/Foundation/foundationList?_dc=1457082572614
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0230s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0120s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0130s ]
+SQL: select * from (
+SELECT
+( case t2.ctr_ct_finish when 100 then 2  else 1 end) as openorclose,
+	 t2.amt_ct_last,
+	 t1.capitalid as capid, 
+	 (t2.amt_ct- t2.amt_ct_last)  as curr_amt,
+	t1.*, t2.id AS period_id,
+	t2.cod_period,
+	t2.ctr_ct_finish,
+	t2.ctr_ct, 
+	t2.ctr_ct_last
+	 
+
+FROM
+	otc_cf_mast t1
+LEFT JOIN otc_cf_ctl t2 ON t1.id = t2.cf_mast_id 
+WHERE
+	t1.cod_cf_status IN (1, 2)
+
+AND t1.cod_is_delete = 0
+AND t2.ctr_ct_finish <=100
+ 
+order by t1.rat_cf_inv_min asc,openorclose asc,t1.dat_modify asc,t2.cod_period desc
+) as c
+group by rat_cf_inv_min  [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_capitalpool a WHERE a.validflag = '1' LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT (case
+		WHEN c.amt_cf_inv_min is null  THEN 0
+		when a.surplus_amount >c.amt_cf_inv_min then 0
+		WHEN a.status !=2 THEN 0			
+		when (sum(b.ctr_ct_finish)/count(b.id)) != 100 then 0
+		when sum(b.amt_ct_last) = 0 then 0
+		when (select count(1) from otc_cf_ivs temp where temp.capitalid = a.id and temp.cod_ivs_status = 0)!=0 then 0
+	else 1
+	end ) as canhuigou,a.id,a.name,a.holder,a.investment_type,a.total_amount,a.surplus_amount,a.status,a.memo,a.usr_create,a.dat_create,e.title,case when a.id in(0,80,76,78,77,79) then 1 else 0 end as isshow FROM otc_capitalpool a left JOIN otc_cf_ctl b on a.id = b.capitalid left JOIN otc_cf_mast c on b.cf_mast_id = c.id left JOIN otc_cf_mast e on e.id = a.cf_mast_id  WHERE a.validflag = '1' GROUP BY a.id ORDER BY a.id desc LIMIT 0,25   [ RunTime:0.0060s ]
+
+[ 2016-03-04T17:09:34+08:00 ] 127.0.0.1 /Admin/Access/getUserPermission
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0110s ]
+SQL: SELECT aa.role_id FROM otc_auth_access as aa left JOIN otc_auth_role as ar ON aa.role_id = ar.id  WHERE aa.uid = 1 AND ar.status = 1  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,n.permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0110s ]
+
+[ 2016-03-04T17:09:34+08:00 ] 127.0.0.1 /Admin/Foundation/viewFoundation
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0130s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0110s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `otc_capitalpool` WHERE `id` = 80 LIMIT 1   [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0120s ]
+SQL: SELECT `title` FROM `otc_cf_mast` WHERE `id` = 139 LIMIT 1   [ RunTime:0.0020s ]
+
+[ 2016-03-04T17:09:35+08:00 ] 127.0.0.1 /Admin/Foundation/FoundAllUploadFile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool_file` [ RunTime:0.0070s ]
+SQL: SELECT `id`,`file`,`type`,`filename` FROM `otc_capitalpool_file` WHERE `capitalid` = 80 AND `validflag` = 1  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0100s ]
+SQL: SELECT `otc_code` FROM `otc_capitalpool` WHERE `id` = 80 LIMIT 1   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:09:45+08:00 ] 127.0.0.1 /Admin/Access/getUserPermission
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT aa.role_id FROM otc_auth_access as aa left JOIN otc_auth_role as ar ON aa.role_id = ar.id  WHERE aa.uid = 1 AND ar.status = 1  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,n.permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0100s ]
+
+[ 2016-03-04T17:09:45+08:00 ] 127.0.0.1 /Admin/Foundation/viewFoundation
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0110s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `otc_capitalpool` WHERE `id` = 80 LIMIT 1   [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0120s ]
+SQL: SELECT `title` FROM `otc_cf_mast` WHERE `id` = 139 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-04T17:09:46+08:00 ] 127.0.0.1 /Admin/Foundation/FoundAllUploadFile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool_file` [ RunTime:0.0070s ]
+SQL: SELECT `id`,`file`,`type`,`filename` FROM `otc_capitalpool_file` WHERE `capitalid` = 80 AND `validflag` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0080s ]
+SQL: SELECT `otc_code` FROM `otc_capitalpool` WHERE `id` = 80 LIMIT 1   [ RunTime:0.0020s ]
+
+[ 2016-03-04T17:09:52+08:00 ] 127.0.0.1 /Admin/Access/getUserPermission
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT aa.role_id FROM otc_auth_access as aa left JOIN otc_auth_role as ar ON aa.role_id = ar.id  WHERE aa.uid = 1 AND ar.status = 1  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,n.permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0110s ]
+
+[ 2016-03-04T17:09:52+08:00 ] 127.0.0.1 /Admin/Foundation/viewFoundation
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `otc_capitalpool` WHERE `id` = 80 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0100s ]
+SQL: SELECT `title` FROM `otc_cf_mast` WHERE `id` = 139 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-04T17:09:53+08:00 ] 127.0.0.1 /Admin/Foundation/FoundAllUploadFile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool_file` [ RunTime:0.0150s ]
+SQL: SELECT `id`,`file`,`type`,`filename` FROM `otc_capitalpool_file` WHERE `capitalid` = 80 AND `validflag` = 1  [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0160s ]
+SQL: SELECT `otc_code` FROM `otc_capitalpool` WHERE `id` = 80 LIMIT 1   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:10:14+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:10:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:10:35+08:00 ] 127.0.0.1 /Admin/Message/getPublicMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0070s ]
+SQL: SELECT a.*,IF(ISNULL(b.id),0,1) as is_view FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) ORDER BY a.add_time desc LIMIT 0,2   [ RunTime:0.0070s ]
+
+[ 2016-03-04T17:11:24+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:11:52+08:00 ] 127.0.0.1 /Admin/Access/getUserPermission
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT aa.role_id FROM otc_auth_access as aa left JOIN otc_auth_role as ar ON aa.role_id = ar.id  WHERE aa.uid = 1 AND ar.status = 1  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,n.permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0110s ]
+
+[ 2016-03-04T17:11:52+08:00 ] 127.0.0.1 /Admin/Foundation/getBufferFound?_dc=1457082712523
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0140s ]
+SQL: SELECT `id`,`name`,`holder`,`investment_type`,`total_amount`,`surplus_amount`,`status`,`memo`,`usr_create`,`dat_create` FROM `otc_capitalpool` WHERE `validflag` = 1 AND `usr_create` = 1  [ RunTime:0.0150s ]
+SQL: SELECT `id`,`name`,`holder`,`investment_type`,`total_amount`,`surplus_amount`,`status`,`memo`,`usr_create`,`dat_create` FROM `otc_capitalpool` WHERE `validflag` = 1 AND `usr_create` = 1 LIMIT 0,25   [ RunTime:0.0110s ]
+
+[ 2016-03-04T17:11:57+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-03-04T17:11:59+08:00 ] 127.0.0.1 /Admin/Access/getUserNodeList?_dc=1457082719656&page=1&start=0&limit=25
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT aa.role_id FROM otc_auth_access as aa left JOIN otc_auth_role as ar ON aa.role_id = ar.id  WHERE aa.uid = 1 AND ar.status = 1  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT r.node_id,n.name,n.pid,n.module,n.iconCls,n.group,n.url FROM otc_auth_role_node as r INNER JOIN otc_auth_node as n on n.id = r.node_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80') AND n.type = 1 AND n.status = 1 ORDER BY n.sort asc, n.id desc  [ RunTime:0.0090s ]
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: id D:\WEB\192.168.1.126\otc\Application\Common\Common\function.php 第 119 行.
+
+[ 2016-03-04T17:12:00+08:00 ] 127.0.0.1 /Admin/Foundation/allFoundStatus/type/1?_dc=1457082720307
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0120s ]
+
+[ 2016-03-04T17:12:00+08:00 ] 127.0.0.1 /Admin/Access/getUserPermission
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT aa.role_id FROM otc_auth_access as aa left JOIN otc_auth_role as ar ON aa.role_id = ar.id  WHERE aa.uid = 1 AND ar.status = 1  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,n.permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0120s ]
+
+[ 2016-03-04T17:12:00+08:00 ] 127.0.0.1 /Admin/Foundation/getBufferFound?_dc=1457082720687
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0120s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0120s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0140s ]
+SQL: SELECT `id`,`name`,`holder`,`investment_type`,`total_amount`,`surplus_amount`,`status`,`memo`,`usr_create`,`dat_create` FROM `otc_capitalpool` WHERE `validflag` = 1 AND `usr_create` = 1  [ RunTime:0.0040s ]
+SQL: SELECT `id`,`name`,`holder`,`investment_type`,`total_amount`,`surplus_amount`,`status`,`memo`,`usr_create`,`dat_create` FROM `otc_capitalpool` WHERE `validflag` = 1 AND `usr_create` = 1 LIMIT 0,25   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:12:01+08:00 ] 127.0.0.1 /Admin/Foundation/cfMastSelect?_dc=1457082721631
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0100s ]
+SQL: SELECT `id`,`title` FROM `otc_cf_mast` WHERE `cod_cf_status` <> 0  [ RunTime:0.0020s ]
+
+[ 2016-03-04T17:12:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:13:23+08:00 ] 127.0.0.1 /Admin/Message/getPublicMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+SQL: SELECT a.*,IF(ISNULL(b.id),0,1) as is_view FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) ORDER BY a.add_time desc LIMIT 0,2   [ RunTime:0.0080s ]
+
+[ 2016-03-04T17:13:24+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:13:59+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:14:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0150s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:15:24+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:15:59+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:16:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0050s ]
+
+[ 2016-03-04T17:17:24+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0140s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:17:59+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0060s ]
+
+[ 2016-03-04T17:18:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:19:24+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:19:59+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:20:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:20:35+08:00 ] 127.0.0.1 /Admin/Message/getPublicMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0100s ]
+SQL: SELECT a.*,IF(ISNULL(b.id),0,1) as is_view FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) ORDER BY a.add_time desc LIMIT 0,2   [ RunTime:0.0080s ]
+
+[ 2016-03-04T17:21:24+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:21:59+08:00 ] 127.0.0.1 /Admin/Message/getPublicMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0070s ]
+SQL: SELECT a.*,IF(ISNULL(b.id),0,1) as is_view FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) ORDER BY a.add_time desc LIMIT 0,2   [ RunTime:0.0070s ]
+
+[ 2016-03-04T17:22:00+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:22:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:23:23+08:00 ] 127.0.0.1 /Admin/Message/getPublicMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0070s ]
+SQL: SELECT a.*,IF(ISNULL(b.id),0,1) as is_view FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) ORDER BY a.add_time desc LIMIT 0,2   [ RunTime:0.0080s ]
+
+[ 2016-03-04T17:23:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0040s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0120s ]
+
+[ 2016-03-04T17:24:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:24:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:25:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0040s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:26:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:26:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:27:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0190s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:28:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0050s ]
+
+[ 2016-03-04T17:28:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:29:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:30:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:30:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:30:35+08:00 ] 127.0.0.1 /Admin/Message/getPublicMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+SQL: SELECT a.*,IF(ISNULL(b.id),0,1) as is_view FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) ORDER BY a.add_time desc LIMIT 0,2   [ RunTime:0.0120s ]
+
+[ 2016-03-04T17:31:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:31:59+08:00 ] 127.0.0.1 /Admin/Message/getPublicMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0070s ]
+SQL: SELECT a.*,IF(ISNULL(b.id),0,1) as is_view FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) ORDER BY a.add_time desc LIMIT 0,2   [ RunTime:0.0070s ]
+
+[ 2016-03-04T17:32:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:32:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0200s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0160s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0180s ]
+
+[ 2016-03-04T17:33:23+08:00 ] 127.0.0.1 /Admin/Message/getPublicMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+SQL: SELECT a.*,IF(ISNULL(b.id),0,1) as is_view FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) ORDER BY a.add_time desc LIMIT 0,2   [ RunTime:0.0080s ]
+
+[ 2016-03-04T17:33:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:34:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:34:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:35:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:36:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:36:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:37:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0220s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0050s ]
+
+[ 2016-03-04T17:38:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:38:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:39:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0040s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:40:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:40:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0050s ]
+
+[ 2016-03-04T17:40:35+08:00 ] 127.0.0.1 /Admin/Message/getPublicMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0130s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0140s ]
+SQL: SELECT a.*,IF(ISNULL(b.id),0,1) as is_view FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) ORDER BY a.add_time desc LIMIT 0,2   [ RunTime:0.0160s ]
+
+[ 2016-03-04T17:41:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:41:59+08:00 ] 127.0.0.1 /Admin/Message/getPublicMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+SQL: SELECT a.*,IF(ISNULL(b.id),0,1) as is_view FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) ORDER BY a.add_time desc LIMIT 0,2   [ RunTime:0.0130s ]
+
+[ 2016-03-04T17:42:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:42:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:43:23+08:00 ] 127.0.0.1 /Admin/Message/getPublicMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+SQL: SELECT a.*,IF(ISNULL(b.id),0,1) as is_view FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) ORDER BY a.add_time desc LIMIT 0,2   [ RunTime:0.0070s ]
+
+[ 2016-03-04T17:43:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:44:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:44:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0040s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:45:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:46:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:46:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:47:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:48:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:48:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:49:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:50:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:50:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:50:35+08:00 ] 127.0.0.1 /Admin/Message/getPublicMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0100s ]
+SQL: SELECT a.*,IF(ISNULL(b.id),0,1) as is_view FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) ORDER BY a.add_time desc LIMIT 0,2   [ RunTime:0.0110s ]
+
+[ 2016-03-04T17:51:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:51:59+08:00 ] 127.0.0.1 /Admin/Message/getPublicMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0070s ]
+SQL: SELECT a.*,IF(ISNULL(b.id),0,1) as is_view FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) ORDER BY a.add_time desc LIMIT 0,2   [ RunTime:0.0070s ]
+
+[ 2016-03-04T17:52:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:52:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:53:23+08:00 ] 127.0.0.1 /Admin/Message/getPublicMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0100s ]
+SQL: SELECT a.*,IF(ISNULL(b.id),0,1) as is_view FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) ORDER BY a.add_time desc LIMIT 0,2   [ RunTime:0.0090s ]
+
+[ 2016-03-04T17:53:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:54:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:54:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:55:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:56:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0050s ]
+
+[ 2016-03-04T17:56:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:57:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:58:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T17:58:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T17:59:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T18:00:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0050s ]
+
+[ 2016-03-04T18:00:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T18:00:35+08:00 ] 127.0.0.1 /Admin/Message/getPublicMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0100s ]
+SQL: SELECT a.*,IF(ISNULL(b.id),0,1) as is_view FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) ORDER BY a.add_time desc LIMIT 0,2   [ RunTime:0.0100s ]
+
+[ 2016-03-04T18:01:25+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0040s ]
+
+[ 2016-03-04T18:01:59+08:00 ] 127.0.0.1 /Admin/Message/getPublicMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_public_message` [ RunTime:0.0070s ]
+SQL: SELECT a.*,IF(ISNULL(b.id),0,1) as is_view FROM otc_public_message as a left JOIN otc_public_message_log as b on a.id = b.message_id and b.uid = 1  WHERE (  a.status = 1 ) ORDER BY a.add_time desc LIMIT 0,2   [ RunTime:0.0080s ]
+
+[ 2016-03-04T18:02:01+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+
+[ 2016-03-04T18:02:33+08:00 ] 127.0.0.1 /Admin/Message/getUserMessageList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user_message` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: add_time D:\WEB\192.168.1.126\otc\Application\Admin\Model\UserMessageModel.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_user_message` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `otc_user_message` WHERE `uid` = 1 ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0030s ]
+

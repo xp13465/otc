@@ -1,0 +1,151 @@
+<div class="group productListClass" ng-if="productList">
+	<div class="groupBg"></div>
+	<div class="groupCon">
+		<span class="del" ng-click="closeProductListFn()">
+			<img src="/Public/UI/images/desktop/del_01.png" alt="">
+		</span>
+		<div class="top">
+			<p style="background:url('/Public/UI/images/desktop/list/top_01.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/top_02.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/top_03.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/top_04.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/top_05.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/top_06.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/top_07.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/top_08.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/top_09.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/top_10.png') center 0 repeat-x"></p>
+		</div>
+		<div class="con">
+			<div class="tit">
+				{{productListInfo.title + productListInfo.cod_period}}期
+			</div>
+			<div class="main">
+				<div class="mainCon">
+					<span class="img">
+						<p class="p1">{{productListInfo.title}}<i>({{productListInfo.cod_period}}期)</i></p>
+						<p class="p2">{{productListInfo.amt_time}}(月)</p>
+					</span>
+					<div class="h1">已投资金额 : <i class="red">{{productListInfo.curr_amt}}(元)</i>
+						<span>剩余投资金额: <i class="red">{{productListInfo.ctl_amt_ct_last}}(元)</i></span>
+					</div>
+					<dl class="clearfix">
+						<dt class ="fl">
+							<i class="text">预计年化收益率</i>
+							<i class="red point">{{productListInfo.rat_cf_inv_min}}%</i>
+						</dt>
+						<dd class ="fl">
+							<p>
+								<i class="icon icon_01"></i> 利息分配方式: <i class="gray">按季付息</i>
+							</p>
+							<p ng-if="productListInfo.amt_cf_inv_max != 0&&produceCategory.status == 1">
+								<i class="icon icon_02"></i> 认购金额:  <i class="gray">[{{productListInfo.amt_cf_inv_min}}万 - {{productListInfo.amt_cf_inv_max}}万]</i>
+							</p>
+							<p ng-if="productListInfo.amt_cf_inv_max == 0&&produceCategory.status == 1">
+								<i class="icon icon_02"></i> 认购金额:  <i class="gray">{{productListInfo.amt_cf_inv_min}}万起</i>
+							</p>
+
+							<p ng-if="productListInfo.amt_ct_max != 0&&produceCategory.status == 2">
+								<i class="icon icon_02"></i> 认购份数:  <i class="gray">[{{productListInfo.amt_ct_min/10000}}万份 - {{productListInfo.amt_ct_max/10000}}万份]</i>
+								<span>每份{{productListInfo.amt_cf_inv_each}}元</span>
+							</p>
+							<p ng-if="productListInfo.amt_ct_max == 0&&produceCategory.status == 2">
+								<i class="icon icon_02"></i> 认购份数:  <i class="gray">{{productListInfo.amt_ct_min/10000}}万份起</i>
+								<span>每份{{productListInfo.amt_cf_inv_each}}元</span>
+							</p>
+
+						</dd>
+					</dl>
+					<div class="other">
+						<span class="btn" ng-click="showInvestRecordFn({
+						  'cfid':productListInfo.id,
+						  'ctlid':productListInfo.period_id
+						})">投资记录</span>
+						<div class="point fl">
+							<div class="clearfix">
+								<span class="fr">
+									<i class="gray">购买人数</i><br/>
+									<i class="red">{{productListInfo.num}}</i>人
+								</span>
+								<span class="fl">
+									<i class="gray">投资期限</i><br/>
+									<i class="red">{{productListInfo.amt_time}}</i>个月
+								</span>
+							</div>
+							<div class="pointMain ">
+								<div class="pointMain_hover" ng-style="{'width':productListInfo.ctr_ct_finish + '%'}">
+									
+								</div>
+							</div>
+							<div class="text">
+								<i class="gray">{{productListInfo.ctr_ct_finish}}%</i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="add">
+			<div class="add_con">
+				<p class="add_tit">项目详情</p>
+				<!-- <p class="add_tit">总募集规模: <span>{{productListInfo.total_amount}} （元）</span></p>
+				<p class="add_s_tit">
+					剩余可投 <span>{{productListInfo.total_amount}} 元</span>
+				</p> -->
+				<ul class="add_ul clearfix">
+					<li>
+						发行人 <span>{{productListInfo.issuer|delFont}}</span>
+					</li>
+					<li>
+						管理人 <span>{{productListInfo.manager|delFont}}</span>
+					</li>
+					<li>
+						资金托管方 <span>{{productListInfo.zjtgf|delFont}}</span>
+					</li>
+					<li>
+						确权机构 <span>{{productListInfo.qqjg|delFont}}</span>
+					</li>
+				</ul>
+				<ul class="add_ulInfo clearfix">
+					<li ng-repeat="iteam in repeatProductListInfo" ng-class="getClass($index,repeatProductListInfo)" ng-mouseover = "eleFn(1,$index,repeatProductListInfo)" >
+						<img ng-src="{{iteam.img}}" alt="{{iteam.name}}">
+						<p>{{iteam.name|delFont}}</p>
+					</li>
+					
+				</ul>
+				<div class="addInfoMsg"  ng-bind-html="repeatProductListInfoInit.msg|delFont|trustAsHtml">
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_01.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_02.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_03.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_04.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_05.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_06.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_07.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_08.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_09.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_10.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_11.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_12.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_13.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_14.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_15.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_16.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_17.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_18.png') center 0 repeat-x"></p>
+			<p style="background:url('/Public/UI/images/desktop/list/bottom_19.png') center 0 repeat-x"></p>
+		</div>
+		<div class="bottom_btn">
+			<p class="input">
+				<span class="input_show" ng-if="productListInfo.money">{{productListInfo.money|addNumberData}}<i>元</i></span>
+				<input type="text" ng-model="productListInfo.money"><span ng-if="produceCategory.status == 1">元购买金额</span><span ng-if="produceCategory.status == 2">份购买份数(每份{{productListInfo.amt_cf_inv_each}}元)</span>
+			</p>
+			<p>
+				<span class="btn" ng-click="productMoneyFn()">立即申购</span>
+			</p>
+		</div>
+	</div>
+</div>

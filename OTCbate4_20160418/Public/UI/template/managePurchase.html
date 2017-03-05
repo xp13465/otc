@@ -1,0 +1,102 @@
+<div class="group userInfolistClass" ng-if="managePurchase">
+	<div class="groupBg"></div>
+	<div class="groupCon">
+		<span class="del" ng-click="closemPurchaseFn()">
+			<img src="/Public/UI/images/desktop/del_01.png" alt="">
+		</span>
+		<div class="tit clearfix">
+			<img src="/Public/UI/images/desktop/mange01.png" alt="">
+			<span>
+				申购管理
+			</span>
+		</div>
+		<div class="nav">
+			<div class="search">
+				<input type="text" class="input" placeholder="请输入关键字搜索(用户姓名、身份证号)" ng-model="mPurdataTimeList.keywordText">
+				<a href="javascript:;" class="btn" ng-click="mPursearchListFn()"></a>
+			</div>
+			<span>申购时间:</span>
+			<select ng-model="mPurdataTimeList.mPurTimeNodeCurrent" class="select" ng-options="data.id as data.name for data in mPurTimeNode" ng-change="mPurTimes(mPurdataTimeList.mPurTimeNodeCurrent)">
+			</select>
+			<span>申购状态:</span>
+			<select ng-model="mPurdataTimeList.mPurStatusNodeCurrent" class="select" ng-options="data.id as data.name for data in mPurStatusNode" ng-change="mPurStatus(mPurdataTimeList.mPurStatusNodeCurrent)">
+			</select>
+			
+		</div>
+		<div class="list">
+			<table  border="0" cellspacing="0" cellpadding="0" class="table">
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>客户姓名</th>
+						<th>身份证号</th>
+						<th>投资标的</th>
+						<th>投资金额</th>
+						<th>申购状态</th>
+						<th>申购时间</th>
+						<th>所属门店</th>
+						<th>录入人</th>
+						<th>操作</th>
+						<th>合同</th>
+						<th>协议</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr  ng-repeat = "iteam in mPurIteams" ng-class="{'even': !$even}">
+						<td>{{$index + 1}}</td>
+						<td>{{iteam.nam_cust_real}}</td>
+						<td>{{iteam.cod_cust_id_no}}</td>
+						<td>{{iteam.product_code}}</td>
+						<td>{{iteam.amt_int_total}}</td>
+						<td ng-switch on="iteam.cod_ivs_status">
+							<span ng-switch-when ="-1">已作废</span>
+							<span ng-switch-when ="0">待确认</span>
+							<span ng-switch-when ="1">已完成</span>
+							<span ng-switch-when ="2">已赎回</span>
+						</td>
+						<td>{{iteam.dat_modify}}</td>
+						<td>{{iteam.department_name}}</td>
+						<td>{{iteam.user_name}}</td>
+						<td ng-if ="iteam.cod_ivs_status == 0">
+						    <span ng-if="iteam.dobuy == 0">
+						    	<a href="javascript:;" class="defaultClass" >确认购买</a>
+						    </span>
+						    <span ng-if="iteam.dobuy == 1">
+						    	<a href="javascript:;" ng-click="mPurfinishInvestFn(iteam.id)">确认购买</a>
+						    </span>
+						    <span ng-if="iteam.cancel == 0">
+						    	<a href="javascript:;" class="defaultClass" >放弃购买</a>
+						    </span>
+						    <span ng-if="iteam.cancel == 1">
+						    	<a href="javascript:;" ng-click="mPurcancelInvestFn(iteam.id)">放弃购买</a>
+						    </span>
+							<a href="javascript:;" ng-class="{'defaultClass':true}">赎回投资</a>
+							
+						</td>
+						<td ng-if ="iteam.cod_ivs_status == 1">
+							<a href="javascript:;" ng-class="{'defaultClass':true}">确认购买</a>
+							<a href="javascript:;" ng-class="{'defaultClass':true}">放弃购买</a>
+						    <span ng-if="iteam.redemption == 0">
+						    	<a href="javascript:;" class="defaultClass" >赎回投资</a>
+						    </span>
+						    <span ng-if="iteam.redemption == 1">
+						    	<a href="javascript:;" ng-click="mPurredemptionInvestFn(iteam.id)">赎回投资</a>
+						    </span> 
+							
+						</td>
+						<td ng-if ="iteam.cod_ivs_status != 0&&iteam.cod_ivs_status != 1">
+							<a href="javascript:;" ng-class="{'defaultClass':true}">确认购买</a>
+							<a href="javascript:;" ng-class="{'defaultClass':true}">放弃购买</a>
+							<a href="javascript:;" ng-class="{'defaultClass':true}">赎回投资</a>
+						</td>
+						<td class="" ng-if="iteam.cod_ivs_status == 1 || iteam.cod_ivs_status == 2" ><a href="javascript:;" ng-href="/guest/Invest/downContractpdf?ivsid={{iteam.id}}" target="_blank"><i class="down"></i>下载</td></a>
+						<td class="" ng-if="iteam.cod_ivs_status == 1 || iteam.cod_ivs_status == 2" ><a href="javascript:;" ng-href="/guest/Invest/downDetailpdf?ivsid={{iteam.id}}" target="_blank"><i class="down"></i>下载</td></a>
+						<td class="down_td" ng-if="iteam.cod_ivs_status != 1 && iteam.cod_ivs_status != 2"><i class="down"></i>下载</td>
+						<td class="down_td" ng-if="iteam.cod_ivs_status != 1 && iteam.cod_ivs_status != 2"><i class="down"></i>下载</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<tm-pagination conf="paginationConf" class="clearfix zbPageClass"></tm-pagination>
+	</div>
+</div>

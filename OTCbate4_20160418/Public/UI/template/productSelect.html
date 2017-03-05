@@ -1,0 +1,21 @@
+<div class="group productSelectClass" ng-if="productSelect">
+	<div class="groupBg"></div>
+	<div class="groupCon">
+		<div class="clearfix">
+			<span class="del" ng-click="closeproductSelectFn()">
+				<img src="/Public/UI/images/desktop/del_01.png" alt="">
+			</span>
+			<div class="tit">请选择产品购买形式</div>
+		</div>
+		<ul class="con clearfix">
+			<li ng-repeat ="item in productSelectArr" ng-click="productSelectFn({
+			  'id':item.id,
+			  'investment_type':1,
+			  'capitalid':item.capitalid
+			})">
+				<p class="p1">{{item.name}}</p>
+				<p class="p2">{{item.memo}}</p>
+			</li>
+		</ul>
+	</div>
+</div>

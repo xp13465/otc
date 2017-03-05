@@ -1,0 +1,19 @@
+<div class="group speedRightClass" ng-if="speedRight">
+	<div class="groupBg"></div>
+	<div class="groupCon">
+		<span class="del" ng-click="closespeedRightFn()">
+			<img src="/Public/UI/images/desktop/del_01.png" alt="">
+		</span>
+		<div class="tit">确权进度</div>
+		<div class="con">
+			<ul class="ul">
+				<li class="clearfix noBorder" ng-repeat = "item in speedRightArr">
+					<label class="label">
+						{{item.dat_create}}
+					</label>
+					{{item.error_msg}}
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,26 @@
+<div class="group investRecordClass" ng-if="investRecord">
+	<div class="groupBg"></div>
+	<div class="groupCon">
+		<span class="del" ng-click="closeinvestRecordFn()">
+			<img src="/Public/UI/images/desktop/del_01.png" alt="">
+		</span>
+		<div class="con">
+			<table  border="0" cellspacing="0" cellpadding="0" class="table">
+				<thead>
+					<tr>
+						<th>投资人</th>
+						<th>投资金额</th>
+						<th>投资时间</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="items in investRecordListArr">
+						<td>{{items.nam_cust_real}}</td>
+						<td>{{items.amt_int_total}}</td>
+						<td>{{items.dat_create}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

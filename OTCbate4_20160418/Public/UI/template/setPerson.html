@@ -1,0 +1,59 @@
+<div class="group setPersonClass" ng-if="setPerson">
+	<div class="groupBg"></div>
+	<div class="groupCon">
+		<span class="del" ng-click="closesetPersonFn()">
+			<img src="/Public/UI/images/desktop/del_01.png" alt="">
+		</span>
+		<div class="title cen">
+			<img src="/Public/UI/images/desktop/person.png" alt="">
+		</div>
+		<div>
+			<ul class="ul">
+				<li class="clearfix cur">
+					<label>
+						客户姓名
+					</label>
+					<input type="text" ng-model="userPersonList.nam_cust_real" placeholder="客户姓名">
+				</li>
+				<li class="clearfix cur">
+					<label>
+						身份证号
+					</label>
+					<input type="text" ng-model="userPersonList.cod_cust_id_no" placeholder="身份证号">
+				</li>
+				<li class="clearfix cur">
+					<label>
+						新密码
+					</label>
+					<input type="password" ng-model="userPersonList.newpwd" placeholder="新密码" ng-keyup="passwordRole($event)" onpaste="javascript:return false;" maxlength="12">
+
+				</li>
+				<div class="passwordList clearfix">
+					<dl ng-class="{role_one:role.role_one}">
+						<dt></dt>
+						<dd>弱</dd>
+					</dl>
+					<dl ng-class="{role_two:role.role_two}">
+						<dt></dt>
+						<dd>中</dd>
+					</dl>
+					<dl ng-class="{role_three:role.role_three}">
+						<dt></dt>
+						<dd>强</dd>
+					</dl>
+				</div>
+				<li class="clearfix cur">
+					<label>
+						确认新密码
+					</label>
+					<input type="password" ng-model="userPersonList.newpwd2" placeholder="确认新密码">
+				</li>
+			</ul>
+			<div class="btnBg">
+				<a href="javascript:;" class="btn" ng-click="setPersonFn();">
+					确定
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

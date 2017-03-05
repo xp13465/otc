@@ -1,0 +1,35 @@
+.ngdialog.ngdialog-theme-plain.custom-width .ngdialog-content {
+    width: 150px;
+}
+.ngdialog.ngdialog-theme-plain h2{
+    margin-bottom: 0.625em;
+}
+.ngdialog.ngdialog-theme-plain .ngdialog-content p{
+    margin-bottom: 0.625em;
+}
+
+.ngdialog.ngdialog-theme-plain .ngdialog-button.ngdialog-button-primary {
+    color: #fff;
+    border: 1px solid #00B496;
+    background: #00B496;
+    padding: 5px 15px;
+}
+
+.ngdialog.ngdialog-theme-plain .ngdialog-button.ngdialog-button-primary:hover {
+    color: #00B496;
+    background: #fff;
+    border: 1px solid #00B496;
+    padding: 5px 15px;
+}
+.ngdialog.ngdialog-theme-plain .ngdialog-button.ngdialog-button-secondary {
+    color: #fff;
+    border: 1px solid #9B9B9B;
+    background: #9B9B9B;
+    padding: 5px 15px;
+}
+.ngdialog.ngdialog-theme-plain .ngdialog-button.ngdialog-button-secondary:hover {
+    color: #9B9B9B;
+    border: 1px solid #9B9B9B;
+    background: #fff;
+    padding: 5px 15px;
+}

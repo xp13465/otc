@@ -1,0 +1,65 @@
+<div class="group productDocClass" ng-if="productDoc">
+	<div class="groupBg"></div>
+	<div class="groupCon">
+		<span class="del" ng-click="closeproductDocFn()">
+			<img src="/Public/UI/images/desktop/del_01.png" alt="">
+		</span>
+		<div class="con">
+			<ul class="ul">
+				<!-- <li class="clearfix noBorder">
+					<label class="label">
+						客户合同
+					</label>
+					<a target="_blank" ng-href="/guest/Invest/previewContractpdf?ivsid={{productDocObj.id}}">预览</a>
+					<a ng-href="/guest/Invest/downContractpdf?ivsid={{productDocObj.id}}">下载</a>
+				</li> -->
+				<li class="clearfix noBorder">
+					<label class="label">
+						用户姓名
+					</label>
+					{{productDocObj.nam_cust_real}}
+				</li>
+				<li class="clearfix noBorder">
+					<label class="label">
+						身份证号
+					</label>
+					{{productDocObj.cod_cust_id_no}}
+				</li>
+				<li class="clearfix noBorder">
+					<label class="label">
+						投资金额
+					</label>
+					{{productDocObj.amt_int_total|addNumberData2}}元
+				</li>
+				<li class="clearfix cur">
+					<label class="label">
+						销售经理
+					</label>
+					<input type="text" ng-model="productDocObj.sales" placeholder="销售经理">
+				</li>
+				<li class="clearfix cur">
+					<label class="label">
+						POS单号
+					</label>
+					<input type="text" ng-model="productDocObj.pos_order" placeholder="POS单号">
+				</li>
+				<li class="clearfix noBorder">
+					<label class="label">
+						上传POS单
+					</label>
+					<div id="btnUploadImgs">选择文件</div>
+					<span class="returnImgClass" ng-if="productDocObj.pos_file">
+						<span>
+							<img alt="" ng-src="{{productDocObj.pos_file}}" ng-click="showBigImg(productDocObj.pos_file)">
+						</span>
+					</span>
+				</li>
+			</ul>
+			<div class="clearfix btn">
+				<a href="javascript:;" class="yes" ng-click="productDocGetFn()">确认购买</a>
+				<a href="javascript:;" class="no" ng-click="failproductDocFn()">放弃购买</a>
+			</div>
+		</div>
+
+	</div>
+</div>

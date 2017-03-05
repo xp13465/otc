@@ -1,0 +1,55 @@
+<div class="group productBoxClass" ng-if="productBox">
+	<div class="groupBg"></div>
+	<div class="groupCon">
+		<span class="del" ng-click="closeProductBoxFn()">
+			<img src="/Public/UI/images/desktop/del_01.png" alt="">
+		</span>
+		<div class="tit">
+			<i class="icon"></i>
+			可投资项目列表
+		</div>
+		<div class="con">
+			<ul class="clearfix">
+				<li ng-repeat="items in productBoxArr">
+					<p class="h1">{{items.title + items.cod_period}}期</p>
+					<p class="h1_small">
+						已投资金额: <i class="blue">{{items.curr_amt}}</i>元
+					</p>
+					<p class="h2">{{items.rat_cf_inv_min}} <i class="h2_small">%</i></p>
+					<P class="h3">预计年化收益率</P>
+					<div class="svg">
+						<svg width="180" height="180">
+						  <circle cx="100" cy="100" r="70" class="cir1"></circle>
+						  <circle cx="100" cy="100" r="70" class="cir2" style="stroke-dasharray:{{items.ctr_ct_finish_point|divide100}},439"></circle>
+						</svg>
+						<p class="span1">项目状态</p>
+						<p class="span2">{{items.ctr_ct_finish}}%</p>
+					</div>
+					<!-- <div class="h4">
+						 <p class="h4_hover" ng-style="{'width':items.ctr_ct_finish+'%'}"></p>
+						 
+					</div> -->
+					<!-- <p class="h5"><i class="blue">{{items.ctr_ct_finish}}%</i>项目状态:</p> -->
+					<div class="h6">
+						<p class="h6_small"><span>投资期限</span>{{items.amt_time}}个月</p>
+						<p class="h6_small"><span>已投资人数</span>{{items.num}}人</p>
+						<p class="h6_small" ng-if ="items.amt_cf_inv_max != 0&&produceCategory.status == 1"><span>认购金额</span>{{items.amt_cf_inv_min}}-{{items.amt_cf_inv_max}}万</p>
+						<p class="h6_small" ng-if ="items.amt_cf_inv_max == 0&&produceCategory.status == 1"><span>认购金额</span>{{items.amt_cf_inv_min}}万起</p>
+
+						<p class="h6_small" ng-if ="items.amt_ct_max != 0&&produceCategory.status == 2"><span>认购份数</span>{{items.amt_ct_min/10000}}-{{items.amt_ct_max/10000}}万份</p>
+						<p class="h6_small" ng-if ="items.amt_ct_max == 0&&produceCategory.status == 2"><span>认购份数</span>{{items.amt_ct_min/10000}}万份起</p>
+					</div>
+					<div class="btn" ng-if="items.cod_cf_status == 1" ng-click="runProductInfoFn(items.id)">
+						立即投资
+					</div>
+					<div class="btn disable" ng-if="items.cod_cf_status == 2">
+						暂停投资
+					</div>
+					<div class="btn disable" ng-if="items.cod_cf_status == -1">
+						已售罄
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

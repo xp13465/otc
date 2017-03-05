@@ -1,0 +1,169 @@
+<div class="group crmInfoClass" ng-if="crmInfo">
+	<div class="groupBg"></div>
+	<div class="groupCon">
+		<span class="del" ng-click="closeCrmInfoFn()">
+			<img src="/Public/UI/images/desktop/del_01.png" alt="">
+		</span>
+		<div class="tit">
+			<ul class="clearfix">
+				<li class="cur">
+					<img src="/Public/UI/images/desktop/creat.png" alt="">
+					<p>新建信息</p>
+				</li>
+			</ul>
+		</div>
+		<div class="list">
+			<ul class="clearfix">
+				<li>
+					<label>客户来源:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.source">
+				</li>
+				<li>
+					<label>客户名称:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.custname">
+				</li>
+				<li>
+					<label>顾问:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.consultant">
+				</li>
+				<li>
+					<label>所属团队:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.team">
+				</li>
+				<li>
+					<label>门店经理:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.storemanager">
+				</li>
+				<li>
+					<label>门店:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.store">
+				</li>
+				<li>
+					<label>区域经理:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.areamanager">
+				</li>
+				<li>
+					<label>分部:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.division">
+				</li>
+				<li>
+					<label>产品类型:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.producttype">
+				</li>
+				<li>
+					<label>收款日期:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.receiptdate">
+				</li>
+				<li>
+					<label>合同金额:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.contractamount">
+				</li>
+				<li>
+					<label>合同编号:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.contractno">
+				</li>
+				<li>
+					<label>收款金额:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.receivablesamount">
+				</li>
+				<li>
+					<label>年化收益率:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.rateofreturn">
+				</li>
+				<li>
+					<label>期数:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.installments">
+				</li>
+				<li>
+					<label>收款方式:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.paymentmethod">
+				</li>
+				<li>
+					<label>续投与否:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.iscontinued">
+				</li>
+				<li>
+					<label>预计出款日:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.plandate">
+				</li>
+				<li>
+					<label>出款金额<i>(本金)</i>:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.outprincipal">
+				</li>
+				<li>
+					<label>出款金额<i>(利息)</i>:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.outinterest">
+				</li>
+				<li>
+					<label>实收管理费:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.realmanagementfee">
+				</li>
+				<li>
+					<label>违约金费率:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.breakcontractamountrate">
+				</li>
+				<li>
+					<label>违约金额:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.breakcontractamount">
+				</li>
+				<li>
+					<label>客户生日:</label>
+					<input type="text" ng-disabled="true" ng-model="scrmInfo.birthday">
+				</li>
+				<li>
+					<label>联系电话:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.tel">
+				</li>
+				<li>
+					<label>邮编:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.bizcode">
+				</li>
+				<li>
+					<label>地址:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.address">
+				</li>
+				<li>
+					<label>银行账户:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.bankaccount">
+				</li>
+				<li>
+					<label>开户行:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.bankopen">
+				</li>
+				<li>
+					<label>资料邮寄方式:</label>
+					<input type="text" ng-disabled="readOnlyCrmInfo.status" ng-model="scrmInfo.informationbypost">
+				</li>
+				<li class="all">
+					<label>备注:</label>
+					<textarea name="" id="" cols="30" rows="10" ng-model="scrmInfo.memo" ng-disabled="readOnlyCrmInfo.status"></textarea>
+				</li>
+				<li class="all" ng-if="!readOnlyCrmInfo.status">
+					<label>上传图片:</label>
+					<div id="btnUploadImg">选择文件</div>
+					<span class="returnImgClass" ng-if="scrmInfo.crm_file">
+						<span ng-repeat="item in scrmInfo.crm_file">
+							<a href="javascript:;" ng-click="delUploadImg($index)">删除</a>
+							<img alt="" ng-src="{{item}}" ng-click="showUploadImgFn($index)">
+						</span>
+					</span>
+				</li>
+				<li class="all" ng-if="readOnlyCrmInfo.status">
+					<label>上传图片:</label>
+					<span class="returnImgClass" ng-if="scrmInfo.crm_file">
+						<span ng-repeat="item in scrmInfo.crm_file">
+							<img alt="" ng-src="{{item}}" ng-click="showUploadImgFn($index)">
+						</span>
+					</span>
+				</li>
+				<li class="all cen marT30" ng-if="!readOnlyCrmInfo.status">
+					<a href="javascript:;" class="btn" ng-click="setcrm()">提交</a>
+					<a href="javascript:;" class="btn" ng-click="closeCrmInfoFn()">取消</a>
+				</li>
+
+
+
+			</ul>
+		</div>
+	</div>
+</div>

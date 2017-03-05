@@ -1,0 +1,52 @@
+<div class="group setMyselfClass" ng-if="setMyself">
+	<div class="groupBg"></div>
+	<div class="groupCon">
+		<span class="del" ng-click="closesetMyselfFn()">
+			<img src="/Public/UI/images/desktop/del_01.png" alt="">
+		</span>
+		<div class="title cen">
+			<img src="/Public/UI/images/desktop/seting.png" alt="">
+		</div>
+		<div>
+			<ul class="ul">
+				<li class="clearfix cur">
+					<label>
+						当前密码
+					</label>
+					<input type="password" ng-model="setMyselfList.old_password" placeholder="当前密码">
+				</li>
+				<li class="clearfix cur">
+					<label>
+						新密码
+					</label>
+					<input type="password" ng-model="setMyselfList.new_password" placeholder="新密码" ng-keyup="passwordRole($event)" onpaste="javascript:return false;" maxlength="12">
+				</li>
+				<div class="passwordList clearfix">
+					<dl ng-class="{role_one:role.role_one}">
+						<dt></dt>
+						<dd>弱</dd>
+					</dl>
+					<dl ng-class="{role_two:role.role_two}">
+						<dt></dt>
+						<dd>中</dd>
+					</dl>
+					<dl ng-class="{role_three:role.role_three}">
+						<dt></dt>
+						<dd>强</dd>
+					</dl>
+				</div>
+				<li class="clearfix cur">
+					<label>
+						确认新密码
+					</label>
+					<input type="password" ng-model="setMyselfList.new_passwordc" placeholder="确认新密码">
+				</li>
+			</ul>
+			<div class="btnBg">
+				<a href="javascript:;" class="btn" ng-click="setMyselfFn();">
+					确定
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

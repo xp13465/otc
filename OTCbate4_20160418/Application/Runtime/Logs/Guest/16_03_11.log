@@ -1,0 +1,47 @@
+[ 2016-03-11T09:17:27+08:00 ] 127.0.0.1 /Guest/Regularly/sendConfirm/type/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined offset: 0 D:\WEB\192.168.1.126\otc\Framework\Library\Think\Model.class.php 第 222 行.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0120s ]
+SQL: SELECT t1.* FROM otc_cf_ivs as t1 left JOIN otc_cf_ivs_right as t2 ON  t1.id=t2.cf_ivs_id  WHERE ( (t2.id is null or t2.step = 1 ) and t1.cod_ivs_status=1  and t1.operating = 1 ) LIMIT 0,10000   [ RunTime:0.0180s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-03-11T09:22:55+08:00 ] 127.0.0.1 /guest/tjotcapi/aaa
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-11T09:23:06+08:00 ] 127.0.0.1 /guest/tjotcapi/aaa
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-03-11T09:23:10+08:00 ] 127.0.0.1 /guest/tjotcapi/aaa
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-03-11T09:23:20+08:00 ] 127.0.0.1 /guest/tjotcapi/aaa
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+

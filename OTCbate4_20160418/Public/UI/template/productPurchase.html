@@ -1,0 +1,28 @@
+<div class="group productPurchaseClass" ng-if="productPurchase">
+	<div class="groupBg"></div>
+	<div class="groupCon">
+		<span class="del" ng-click="closeproductPurchaseFn()">
+			<img src="/Public/UI/images/desktop/del_01.png" alt="">
+		</span>
+		<div class="con" ng-if="!productPurchaseObj.had_dnf_ivs">
+			<ul>
+				<li>
+					<span>用户姓名</span>{{productPurchaseObj.nam_cust_real}}
+				</li>
+				<li>
+					<span>购买金额</span>{{productPurchaseObj.push_amt_ivs|addNumberData2}}元
+				</li>
+				<li>
+					<span>用户密码</span><input type="password" ng-model="productPurchaseObj.push_password">
+				</li>
+			</ul>
+			<div class="clearfix btn">
+				<a href="javascript:;" class="yes" ng-click="productPurchaseGet()">确认</a>
+				<a href="javascript:;" class="no" ng-click="closeproductPurchaseFn()">取消</a>
+			</div>
+		</div>
+		<div class="con" ng-if="productPurchaseObj.had_dnf_ivs">
+			<p class="help">您还有未完成的交易！</p>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,603 @@
+[ 2016-03-08T08:50:02+08:00 ] 127.0.0.1 /Guest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-08T08:50:02+08:00 ] 127.0.0.1 /guest/access/getUserNodeList?q=1457398202431
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT r.node_id,n.name,n.pid,n.module,n.iconCls,n.group,n.url FROM otc_auth_role_node as r INNER JOIN otc_auth_node as n on n.id = r.node_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80') AND n.type = 2 ORDER BY n.sort asc, n.id desc  [ RunTime:0.0020s ]
+
+[ 2016-03-08T08:50:08+08:00 ] 127.0.0.1 /Guest/cust/login?q=1457398208032
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0380s ]
+SQL: SHOW COLUMNS FROM `otc_cust_person` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `otc_cust_person` WHERE ( cod_cust_id_no = '310115198912126810' and password = 'MTIzNDU2' ) LIMIT 1   [ RunTime:0.0030s ]
+
+[ 2016-03-08T08:50:08+08:00 ] 127.0.0.1 /Guest/Product/getInvestList?q=1457398208200
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0100s ]
+SQL: 
+select * from (
+SELECT
+( case t2.ctr_ct_finish when 100 then 2  else 1 end) as openorclose,
+	 t2.amt_ct_last,
+	 (t2.amt_ct- t2.amt_ct_last)  as curr_amt,
+	t1.*, t2.id AS period_id,
+	t2.cod_period,
+	t2.ctr_ct_finish,
+	t2.ctr_ct, 
+	t2.ctr_ct_last
+	 
+
+FROM
+	otc_cf_mast t1
+LEFT JOIN otc_cf_ctl t2 ON t1.id = t2.cf_mast_id 
+WHERE
+	t1.cod_cf_status IN (1, 2)
+
+AND t1.cod_is_delete = 0
+AND t2.ctr_ct_finish <=100
+ 
+order by t1.rat_cf_inv_min asc,openorclose asc,t1.dat_modify asc,t2.cod_period desc
+) as c
+group by rat_cf_inv_min 
+
+ [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_cf_ivs` WHERE `cod_ivs_status` = 1 AND `cod_ctl_id` = 87 LIMIT 1   [ RunTime:0.0170s ]
+SQL: SELECT SUM(amt_int_total) AS tp_sum FROM `otc_cf_ivs` WHERE `cod_cf_id` = 91 AND `cod_ivs_status` IN ('1','2') LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_cf_ivs` WHERE `cod_ivs_status` = 1 AND `cod_ctl_id` = 86 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT SUM(amt_int_total) AS tp_sum FROM `otc_cf_ivs` WHERE `cod_cf_id` = 92 AND `cod_ivs_status` IN ('1','2') LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_cf_ivs` WHERE `cod_ivs_status` = 1 AND `cod_ctl_id` = 326 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT SUM(amt_int_total) AS tp_sum FROM `otc_cf_ivs` WHERE `cod_cf_id` = 99 AND `cod_ivs_status` IN ('1','2') LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_cf_ivs` WHERE `cod_ivs_status` = 1 AND `cod_ctl_id` = 327 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(amt_int_total) AS tp_sum FROM `otc_cf_ivs` WHERE `cod_cf_id` = 98 AND `cod_ivs_status` IN ('1','2') LIMIT 1   [ RunTime:0.0020s ]
+
+[ 2016-03-08T08:50:11+08:00 ] 127.0.0.1 /Guest/Product/getInvestInfo?q=1457398211174&id=92
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0100s ]
+SQL: select t1.*,(t2.amt_ct- t2.amt_ct_last)  as curr_amt,t2.ctr_ct,t2.ctr_ct_last,t2.id as period_id,t2.amt_ct as ctl_amt_ct,t2.amt_ct_last as ctl_amt_ct_last,t2.cod_period,t2.ctr_ct_finish,t3.name,t3.cf_mast_id,t3.holder,t3.otc_code,t3.investment_type,
+t3.expected_amount,t3.total_amount,t3.surplus_amount,t3.status,t3.validflag,t3.issuer,t3.manager,t3.qqjg,t3.tzfw,
+ t3.memo,t3.zjtgf,t3.dbfjs,t3.fxts,t3.zjaq,t3.zqgz,t3.zcaq,t3.usr_create,t3.dat_create,t3.usr_modify,t3.dat_modify from otc_cf_mast t1 inner join otc_cf_ctl t2
+		on t1.id=t2.cf_mast_id left join otc_capitalpool t3 on t2.capitalid=t3.id where t1.cod_cf_status=1 and t1.cod_is_delete=0 and t1.id=92 and t2.ctr_ct_last>0 and ctr_ct_finish <100 order by t1.rat_cf_inv_min asc,t2.cod_period desc [ RunTime:0.0360s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0120s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_cf_ivs` WHERE `cod_ivs_status` = 1 AND `cod_ctl_id` = 86 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(amt_int_total) AS tp_sum FROM `otc_cf_ivs` WHERE `cod_cf_id` = 92 AND `cod_ivs_status` = 1 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-08T08:51:12+08:00 ] 127.0.0.1 /Guest/cust/getcustinfo?q=1457398272753
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0080s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_cust_person` [ RunTime:0.0070s ]
+SQL: SELECT `cod_cust_id`,`nam_cust_real`,`cod_cust_id_no`,`tel`,`add_time`,`dat_modify` FROM `otc_cust_person` WHERE ( cod_cust_id = '63' ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_cust_crm` [ RunTime:0.0070s ]
+SQL: SELECT `address`,`bizcode` FROM `otc_cust_crm` WHERE ( cod_cust_id=63 ) LIMIT 1   [ RunTime:0.0210s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_cf_ivs` WHERE `cod_cust_id` = 63 AND `cod_ivs_status` = 0 AND `usr_create` = 1 LIMIT 1   [ RunTime:0.0170s ]
+
+[ 2016-03-08T08:51:15+08:00 ] 127.0.0.1 /Guest/Invest/doInvest?q=1457398275168
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_cust_person` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `otc_cust_person` WHERE ( cod_cust_id = '63' and password = 'MTIzNDU2' ) LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0070s ]
+SQL: SELECT a.*,b.otc_code,b.investment_type FROM otc_cf_mast a inner JOIN otc_capitalpool b on a.capitalid = b.id  WHERE a.cod_cf_status = 1 AND a.cod_is_delete = 0 AND a.id = 92 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ctl` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `otc_cf_ctl` WHERE `id` = 86 AND `cf_mast_id` = 92 ORDER BY cod_period desc LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `otc_cf_ctl` SET `amt_ct_last`=amt_ct_last - 200000,`ctr_ct_last`=ctr_ct_last - 1,`ctr_ct_finish`=floor((1-(amt_ct_last/amt_ct))*100) WHERE `id` = 86 AND `ctr_ct_last` >= '1' AND `amt_ct_last` >= '200000' [ RunTime:0.0890s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0110s ]
+SQL: SELECT a.total_amount,a.surplus_amount,sum(c.amt_ct) as shiyong,(a.total_amount- sum(c.amt_ct) ) as shengyu,b.each_amt,b.* FROM otc_capitalpool a inner JOIN otc_cf_mast b on a.id =b.capitalid inner JOIN otc_cf_ctl c  on b.id = c.cf_mast_id  WHERE b.id = '92' LIMIT 1   [ RunTime:0.0030s ]
+SQL: SELECT * FROM `otc_cf_ctl` WHERE `id` = 86 AND `cf_mast_id` = 92 ORDER BY cod_period desc LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `otc_cf_ctl` SET `ctr_ct_finish`=100 WHERE ( id = 86 and (amt_ct_last < 200000.00 or ctr_ct_last < 1 ) ) [ RunTime:0.1410s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0120s ]
+SQL: SELECT * FROM otc_cf_mast a inner JOIN otc_capitalpool b on b.cf_mast_id = a.id  WHERE a.id = '92' AND b.status = 2 AND b.surplus_amount  > a.amt_cf_inv_min AND b.id  <> a.capitalid ORDER BY b.dat_modify asc LIMIT 1   [ RunTime:0.0650s ]
+SQL: INSERT INTO `otc_cf_ctl` (`cf_mast_id`,`type`,`cod_period`,`capitalid`,`amt_ct`,`amt_ct_last`,`ctr_ct`,`ctr_ct_last`,`ctr_ct_finish`,`dat_modify`) VALUES ('92','0','2','2','40000000.00','40000000.00','200','0','101','2016-03-08 08:51:15') [ RunTime:0.0380s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0120s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by cod_period desc,id asc limit 1)  )' at line 1
+ [ SQL语句 ] : UPDATE `otc_capitalpool` SET `surplus_amount`=surplus_amount-40000000.00 WHERE ( status = 2 and id='2' and investment_type='2' and surplus_amount >= '40000000.00'  and 329 = (SELECT id FROM `otc_cf_ctl`  where cf_mast_id =92 and capitalid = 2  and order by cod_period desc,id asc limit 1)  )
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by cod_period desc,id asc limit 1)  )' at line 1
+ [ SQL语句 ] : UPDATE `otc_capitalpool` SET `surplus_amount`=surplus_amount-40000000.00 WHERE ( status = 2 and id='2' and investment_type='2' and surplus_amount >= '40000000.00'  and 329 = (SELECT id FROM `otc_cf_ctl`  where cf_mast_id =92 and capitalid = 2  and order by cod_period desc,id asc limit 1)  )
+
+[ 2016-03-08T08:52:14+08:00 ] 127.0.0.1 /Guest/Invest/doInvest?q=1457398334111
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `otc_cust_person` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `otc_cust_person` WHERE ( cod_cust_id = '63' and password = 'MTIzNDU2' ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0060s ]
+SQL: SELECT a.*,b.otc_code,b.investment_type FROM otc_cf_mast a inner JOIN otc_capitalpool b on a.capitalid = b.id  WHERE a.cod_cf_status = 1 AND a.cod_is_delete = 0 AND a.id = 92 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ctl` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `otc_cf_ctl` WHERE `id` = 86 AND `cf_mast_id` = 92 ORDER BY cod_period desc LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-08T08:52:21+08:00 ] 127.0.0.1 /Guest/cust/getcustinfo?q=1457398341660
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_cust_person` [ RunTime:0.0060s ]
+SQL: SELECT `cod_cust_id`,`nam_cust_real`,`cod_cust_id_no`,`tel`,`add_time`,`dat_modify` FROM `otc_cust_person` WHERE ( cod_cust_id = '63' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_cust_crm` [ RunTime:0.0060s ]
+SQL: SELECT `address`,`bizcode` FROM `otc_cust_crm` WHERE ( cod_cust_id=63 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_cf_ivs` WHERE `cod_cust_id` = 63 AND `cod_ivs_status` = 0 AND `usr_create` = 1 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-08T08:52:24+08:00 ] 127.0.0.1 /Guest/Invest/doInvest?q=1457398344541
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0100s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_cust_person` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `otc_cust_person` WHERE ( cod_cust_id = '63' and password = 'MTIzNDU2' ) LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0110s ]
+SQL: SELECT a.*,b.otc_code,b.investment_type FROM otc_cf_mast a inner JOIN otc_capitalpool b on a.capitalid = b.id  WHERE a.cod_cf_status = 1 AND a.cod_is_delete = 0 AND a.id = 92 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ctl` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `otc_cf_ctl` WHERE `id` = 86 AND `cf_mast_id` = 92 ORDER BY cod_period desc LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `otc_cf_ctl` SET `amt_ct_last`=amt_ct_last - 200000,`ctr_ct_last`=ctr_ct_last - 1,`ctr_ct_finish`=floor((1-(amt_ct_last/amt_ct))*100) WHERE `id` = 86 AND `ctr_ct_last` >= '1' AND `amt_ct_last` >= '200000' [ RunTime:0.0420s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0110s ]
+SQL: SELECT a.total_amount,a.surplus_amount,sum(c.amt_ct) as shiyong,(a.total_amount- sum(c.amt_ct) ) as shengyu,b.each_amt,b.* FROM otc_capitalpool a inner JOIN otc_cf_mast b on a.id =b.capitalid inner JOIN otc_cf_ctl c  on b.id = c.cf_mast_id  WHERE b.id = '92' LIMIT 1   [ RunTime:0.0040s ]
+SQL: SELECT * FROM `otc_cf_ctl` WHERE `id` = 86 AND `cf_mast_id` = 92 ORDER BY cod_period desc LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `otc_cf_ctl` SET `ctr_ct_finish`=100 WHERE ( id = 86 and (amt_ct_last < 200000.00 or ctr_ct_last < 1 ) ) [ RunTime:0.0250s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0110s ]
+SQL: SELECT * FROM otc_cf_mast a inner JOIN otc_capitalpool b on b.cf_mast_id = a.id  WHERE a.id = '92' AND b.status = 2 AND b.surplus_amount  > a.amt_cf_inv_min AND b.id  <> a.capitalid ORDER BY b.dat_modify asc LIMIT 1   [ RunTime:0.0040s ]
+SQL: INSERT INTO `otc_cf_ctl` (`cf_mast_id`,`type`,`cod_period`,`capitalid`,`amt_ct`,`amt_ct_last`,`ctr_ct`,`ctr_ct_last`,`ctr_ct_finish`,`dat_modify`) VALUES ('92','0','2','2','40000000.00','40000000.00','200','0','101','2016-03-08 08:52:24') [ RunTime:0.0250s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0110s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by cod_period desc,id asc limit 1)  )' at line 1
+ [ SQL语句 ] : UPDATE `otc_capitalpool` SET `surplus_amount`=surplus_amount-40000000.00 WHERE ( status = 2 and id='2' and investment_type='2' and surplus_amount >= '40000000.00'  and 330 = (SELECT id FROM `otc_cf_ctl`  where cf_mast_id =92 and capitalid = 2  and order by cod_period desc,id asc limit 1)  )
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by cod_period desc,id asc limit 1)  )' at line 1
+ [ SQL语句 ] : UPDATE `otc_capitalpool` SET `surplus_amount`=surplus_amount-40000000.00 WHERE ( status = 2 and id='2' and investment_type='2' and surplus_amount >= '40000000.00'  and 330 = (SELECT id FROM `otc_cf_ctl`  where cf_mast_id =92 and capitalid = 2  and order by cod_period desc,id asc limit 1)  )
+
+[ 2016-03-08T08:53:31+08:00 ] 127.0.0.1 /Guest/Invest/doInvest?q=1457398410496
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_cust_person` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `otc_cust_person` WHERE ( cod_cust_id = '63' and password = 'MTIzNDU2' ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0080s ]
+SQL: SELECT a.*,b.otc_code,b.investment_type FROM otc_cf_mast a inner JOIN otc_capitalpool b on a.capitalid = b.id  WHERE a.cod_cf_status = 1 AND a.cod_is_delete = 0 AND a.id = 92 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ctl` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `otc_cf_ctl` WHERE `id` = 86 AND `cf_mast_id` = 92 ORDER BY cod_period desc LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `otc_cf_ctl` SET `amt_ct_last`=amt_ct_last - 200000,`ctr_ct_last`=ctr_ct_last - 1,`ctr_ct_finish`=floor((1-(amt_ct_last/amt_ct))*100) WHERE `id` = 86 AND `ctr_ct_last` >= '1' AND `amt_ct_last` >= '200000' [ RunTime:0.0390s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0110s ]
+SQL: SELECT a.total_amount,a.surplus_amount,sum(c.amt_ct) as shiyong,(a.total_amount- sum(c.amt_ct) ) as shengyu,b.each_amt,b.* FROM otc_capitalpool a inner JOIN otc_cf_mast b on a.id =b.capitalid inner JOIN otc_cf_ctl c  on b.id = c.cf_mast_id  WHERE b.id = '92' LIMIT 1   [ RunTime:0.0040s ]
+SQL: SELECT * FROM `otc_cf_ctl` WHERE `id` = 86 AND `cf_mast_id` = 92 ORDER BY cod_period desc LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `otc_cf_ctl` SET `ctr_ct_finish`=100 WHERE ( id = 86 and (amt_ct_last < 200000.00 or ctr_ct_last < 1 ) ) [ RunTime:0.0360s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0120s ]
+SQL: SELECT * FROM otc_cf_mast a inner JOIN otc_capitalpool b on b.cf_mast_id = a.id  WHERE a.id = '92' AND b.status = 2 AND b.surplus_amount  > a.amt_cf_inv_min AND b.id  <> a.capitalid ORDER BY b.dat_modify asc LIMIT 1   [ RunTime:0.0030s ]
+SQL: INSERT INTO `otc_cf_ctl` (`cf_mast_id`,`type`,`cod_period`,`capitalid`,`amt_ct`,`amt_ct_last`,`ctr_ct`,`ctr_ct_last`,`ctr_ct_finish`,`dat_modify`) VALUES ('92','0','2','2','40000000.00','40000000.00','200','0','101','2016-03-08 08:53:30') [ RunTime:0.0320s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0120s ]
+SQL: UPDATE `otc_capitalpool` SET `surplus_amount`=surplus_amount-40000000.00 WHERE ( status = 2 and id='2' and investment_type='2' and surplus_amount >= '40000000.00'  and 331 = (SELECT id FROM `otc_cf_ctl`  where cf_mast_id =92 and capitalid = 2   order by cod_period desc,id asc limit 1)  ) [ RunTime:0.0510s ]
+SQL: UPDATE `otc_cf_ctl` SET `ctr_ct_finish`='0',`ctr_ct_last`='199' WHERE `id` = 331 [ RunTime:0.0150s ]
+SQL: INSERT INTO `otc_cf_ivs` (`cod_cf_id`,`cod_ctl_id`,`cod_cust_id`,`ivs_order`,`capitalid`,`amt_ivs`,`amt_time`,`ctl_ivs_cnt`,`amt_int_total`,`amt_fee_total`,`product_code`,`rat_cf_inv_min`,`cod_ivs_type`,`cod_ivs_status`,`dat_create`,`usr_create`,`dat_modify`,`usr_modify`) VALUES ('92','86','63','00006320160308085330159732','2','200000','12','1','200000','200000','ZB002A001','8.50','2','0','2016-03-08 08:53:30','1','2016-03-08 08:53:30','1') [ RunTime:0.0790s ]
+
+[ 2016-03-08T08:53:31+08:00 ] 127.0.0.1 /Guest/Product/getThisDetail?q=1457398411069
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0070s ]
+SQL: SELECT a.*,b.nam_cust_real,b.cod_cust_id_no FROM otc_cf_ivs a INNER JOIN otc_cust_person b on a.cod_cust_id=b.cod_cust_id  WHERE ( true and a.id=33 ) LIMIT 1   [ RunTime:0.0030s ]
+
+[ 2016-03-08T08:53:46+08:00 ] 127.0.0.1 /Guest/invest/cancelInvest?q=1457398425856
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0070s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0070s ]
+SQL: SELECT a.* FROM otc_cf_ivs a INNER JOIN otc_cf_mast b on a.cod_cf_id = b.id  WHERE a.id = 33 AND a.cod_ivs_status = 0 LIMIT 1   [ RunTime:0.0030s ]
+SQL: UPDATE `otc_cf_ivs` SET `cod_ivs_status`='-1',`dat_modify`='2016-03-08 08:53:45',`usr_modify`='1' WHERE `id` = 33 AND `cod_ivs_status` = 0 [ RunTime:0.0360s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ctl` [ RunTime:0.0100s ]
+SQL: UPDATE `otc_cf_ctl` SET `amt_ct_last`=amt_ct_last+200000.00 WHERE `id` = 86 [ RunTime:0.0320s ]
+SQL: UPDATE `otc_cf_ivs` SET `dat_modify`='2016-03-08 08:53:46',`usr_modify`='1' WHERE `id` = 33 AND `cod_ivs_status` = 0 [ RunTime:0.0010s ]
+
+[ 2016-03-08T08:53:52+08:00 ] 127.0.0.1 /Guest/cust/getcustinfo?q=1457398432496
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0080s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_cust_person` [ RunTime:0.0070s ]
+SQL: SELECT `cod_cust_id`,`nam_cust_real`,`cod_cust_id_no`,`tel`,`add_time`,`dat_modify` FROM `otc_cust_person` WHERE ( cod_cust_id = '63' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_cust_crm` [ RunTime:0.0070s ]
+SQL: SELECT `address`,`bizcode` FROM `otc_cust_crm` WHERE ( cod_cust_id=63 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_cf_ivs` WHERE `cod_cust_id` = 63 AND `cod_ivs_status` = 0 AND `usr_create` = 1 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-08T08:53:55+08:00 ] 127.0.0.1 /Guest/Invest/doInvest?q=1457398435064
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0070s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_cust_person` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `otc_cust_person` WHERE ( cod_cust_id = '63' and password = 'MTIzNDU2' ) LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0060s ]
+SQL: SELECT a.*,b.otc_code,b.investment_type FROM otc_cf_mast a inner JOIN otc_capitalpool b on a.capitalid = b.id  WHERE a.cod_cf_status = 1 AND a.cod_is_delete = 0 AND a.id = 92 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ctl` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `otc_cf_ctl` WHERE `id` = 86 AND `cf_mast_id` = 92 ORDER BY cod_period desc LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `otc_cf_ctl` SET `amt_ct_last`=amt_ct_last - 200000,`ctr_ct_last`=ctr_ct_last - 1,`ctr_ct_finish`=floor((1-(amt_ct_last/amt_ct))*100) WHERE `id` = 86 AND `ctr_ct_last` >= '1' AND `amt_ct_last` >= '200000' [ RunTime:0.0750s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0110s ]
+SQL: SELECT a.total_amount,a.surplus_amount,sum(c.amt_ct) as shiyong,(a.total_amount- sum(c.amt_ct) ) as shengyu,b.each_amt,b.* FROM otc_capitalpool a inner JOIN otc_cf_mast b on a.id =b.capitalid inner JOIN otc_cf_ctl c  on b.id = c.cf_mast_id  WHERE b.id = '92' LIMIT 1   [ RunTime:0.0030s ]
+SQL: SELECT * FROM `otc_cf_ctl` WHERE `id` = 86 AND `cf_mast_id` = 92 ORDER BY cod_period desc LIMIT 1   [ RunTime:0.0030s ]
+SQL: UPDATE `otc_cf_ctl` SET `ctr_ct_finish`=100 WHERE ( id = 86 and (amt_ct_last < 200000.00 or ctr_ct_last < 1 ) ) [ RunTime:0.0320s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0110s ]
+SQL: SELECT * FROM otc_cf_mast a inner JOIN otc_capitalpool b on b.cf_mast_id = a.id  WHERE a.id = '92' AND b.status = 2 AND b.surplus_amount  > a.amt_cf_inv_min AND b.id  <> a.capitalid ORDER BY b.dat_modify asc LIMIT 1   [ RunTime:0.0030s ]
+SQL: INSERT INTO `otc_cf_ctl` (`cf_mast_id`,`type`,`cod_period`,`capitalid`,`amt_ct`,`amt_ct_last`,`ctr_ct`,`ctr_ct_last`,`ctr_ct_finish`,`dat_modify`) VALUES ('92','0','2','2','40000000.00','40000000.00','200','0','101','2016-03-08 08:53:55') [ RunTime:0.0240s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0110s ]
+SQL: UPDATE `otc_capitalpool` SET `surplus_amount`=surplus_amount-40000000.00 WHERE ( status = 2 and id='2' and investment_type='2' and surplus_amount >= '40000000.00'  and 332 = (SELECT id FROM `otc_cf_ctl`  where cf_mast_id =92 and capitalid = 2   order by cod_period desc,id asc limit 1)  ) [ RunTime:0.0020s ]
+SQL: DELETE FROM `otc_cf_ctl` WHERE `id` = 332 [ RunTime:0.0240s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_capitalpool` WHERE ( id='2' and investment_type='2' and surplus_amount >= '40000000.00' and surplus_amount >'200000.00'    ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: INSERT INTO `otc_cf_ivs` (`cod_cf_id`,`cod_ctl_id`,`cod_cust_id`,`ivs_order`,`capitalid`,`amt_ivs`,`amt_time`,`ctl_ivs_cnt`,`amt_int_total`,`amt_fee_total`,`product_code`,`rat_cf_inv_min`,`cod_ivs_type`,`cod_ivs_status`,`dat_create`,`usr_create`,`dat_modify`,`usr_modify`) VALUES ('92','86','63','00006320160308085355437641','2','200000','12','1','200000','200000','ZB002A001','8.50','2','0','2016-03-08 08:53:55','1','2016-03-08 08:53:55','1') [ RunTime:0.0290s ]
+
+[ 2016-03-08T08:53:55+08:00 ] 127.0.0.1 /Guest/Product/getThisDetail?q=1457398435517
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0150s ]
+SQL: SELECT a.*,b.nam_cust_real,b.cod_cust_id_no FROM otc_cf_ivs a INNER JOIN otc_cust_person b on a.cod_cust_id=b.cod_cust_id  WHERE ( true and a.id=34 ) LIMIT 1   [ RunTime:0.0030s ]
+
+[ 2016-03-08T08:54:39+08:00 ] 127.0.0.1 /Guest/invest/cancelInvest?q=1457398479705
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0100s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0070s ]
+SQL: SELECT a.* FROM otc_cf_ivs a INNER JOIN otc_cf_mast b on a.cod_cf_id = b.id  WHERE a.id = 34 AND a.cod_ivs_status = 0 LIMIT 1   [ RunTime:0.0030s ]
+SQL: UPDATE `otc_cf_ivs` SET `cod_ivs_status`='-1',`dat_modify`='2016-03-08 08:54:39',`usr_modify`='1' WHERE `id` = 34 AND `cod_ivs_status` = 0 [ RunTime:0.0450s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ctl` [ RunTime:0.0100s ]
+SQL: UPDATE `otc_cf_ctl` SET `amt_ct_last`=amt_ct_last+200000.00 WHERE `id` = 86 [ RunTime:0.0470s ]
+SQL: UPDATE `otc_cf_ivs` SET `dat_modify`='2016-03-08 08:54:39',`usr_modify`='1' WHERE `id` = 34 AND `cod_ivs_status` = 0 [ RunTime:0.0010s ]
+
+[ 2016-03-08T08:54:55+08:00 ] 127.0.0.1 /Guest/cust/getcustinfo?q=1457398495048
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `otc_cust_person` [ RunTime:0.0060s ]
+SQL: SELECT `cod_cust_id`,`nam_cust_real`,`cod_cust_id_no`,`tel`,`add_time`,`dat_modify` FROM `otc_cust_person` WHERE ( cod_cust_id = '63' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `otc_cust_crm` [ RunTime:0.0060s ]
+SQL: SELECT `address`,`bizcode` FROM `otc_cust_crm` WHERE ( cod_cust_id=63 ) LIMIT 1   [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_cf_ivs` WHERE `cod_cust_id` = 63 AND `cod_ivs_status` = 0 AND `usr_create` = 1 LIMIT 1   [ RunTime:0.0230s ]
+
+[ 2016-03-08T08:54:57+08:00 ] 127.0.0.1 /Guest/Invest/doInvest?q=1457398497393
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0100s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_cust_person` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `otc_cust_person` WHERE ( cod_cust_id = '63' and password = 'MTIzNDU2' ) LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0100s ]
+SQL: SELECT a.*,b.otc_code,b.investment_type FROM otc_cf_mast a inner JOIN otc_capitalpool b on a.capitalid = b.id  WHERE a.cod_cf_status = 1 AND a.cod_is_delete = 0 AND a.id = 92 LIMIT 1   [ RunTime:0.0220s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ctl` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `otc_cf_ctl` WHERE `id` = 86 AND `cf_mast_id` = 92 ORDER BY cod_period desc LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `otc_cf_ctl` SET `amt_ct_last`=amt_ct_last - 200000,`ctr_ct_last`=ctr_ct_last - 1,`ctr_ct_finish`=floor((1-(amt_ct_last/amt_ct))*100) WHERE `id` = 86 AND `ctr_ct_last` >= '1' AND `amt_ct_last` >= '200000' [ RunTime:0.0300s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0110s ]
+SQL: SELECT a.total_amount,a.surplus_amount,sum(c.amt_ct) as shiyong,(a.total_amount- sum(c.amt_ct) ) as shengyu,b.each_amt,b.* FROM otc_capitalpool a inner JOIN otc_cf_mast b on a.id =b.capitalid inner JOIN otc_cf_ctl c  on b.id = c.cf_mast_id  WHERE b.id = '92' LIMIT 1   [ RunTime:0.0030s ]
+SQL: SELECT * FROM `otc_cf_ctl` WHERE `id` = 86 AND `cf_mast_id` = 92 ORDER BY cod_period desc LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `otc_cf_ctl` SET `ctr_ct_finish`=100 WHERE ( id = 86 and (amt_ct_last < 200000.00 or ctr_ct_last < 1 ) ) [ RunTime:0.0500s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0110s ]
+SQL: SELECT * FROM otc_cf_mast a inner JOIN otc_capitalpool b on b.cf_mast_id = a.id  WHERE a.id = '92' AND b.status = 2 AND b.surplus_amount  > a.amt_cf_inv_min AND b.id  <> a.capitalid ORDER BY b.dat_modify asc LIMIT 1   [ RunTime:0.0190s ]
+SQL: INSERT INTO `otc_cf_ctl` (`cf_mast_id`,`type`,`cod_period`,`capitalid`,`amt_ct`,`amt_ct_last`,`ctr_ct`,`ctr_ct_last`,`ctr_ct_finish`,`dat_modify`) VALUES ('92','0','2','2','40000000.00','40000000.00','200','0','101','2016-03-08 08:54:57') [ RunTime:0.0340s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0110s ]
+SQL: UPDATE `otc_capitalpool` SET `surplus_amount`=surplus_amount-40000000.00 WHERE ( status = 2 and id='2' and investment_type='2' and surplus_amount >= '40000000.00'  and 333 = (SELECT id FROM `otc_cf_ctl`  where cf_mast_id =92 and capitalid = 2   order by cod_period desc,id asc limit 1)  ) [ RunTime:0.0360s ]
+SQL: UPDATE `otc_cf_ctl` SET `ctr_ct_finish`='0',`ctr_ct_last`='199' WHERE `id` = 333 [ RunTime:0.0130s ]
+SQL: INSERT INTO `otc_cf_ivs` (`cod_cf_id`,`cod_ctl_id`,`cod_cust_id`,`ivs_order`,`capitalid`,`amt_ivs`,`amt_time`,`ctl_ivs_cnt`,`amt_int_total`,`amt_fee_total`,`product_code`,`rat_cf_inv_min`,`cod_ivs_type`,`cod_ivs_status`,`dat_create`,`usr_create`,`dat_modify`,`usr_modify`) VALUES ('92','86','63','00006320160308085457366019','2','200000','12','1','200000','200000','ZB002A001','8.50','2','0','2016-03-08 08:54:57','1','2016-03-08 08:54:57','1') [ RunTime:0.0620s ]
+
+[ 2016-03-08T08:54:58+08:00 ] 127.0.0.1 /Guest/Product/getThisDetail?q=1457398497937
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0070s ]
+SQL: SELECT a.*,b.nam_cust_real,b.cod_cust_id_no FROM otc_cf_ivs a INNER JOIN otc_cust_person b on a.cod_cust_id=b.cod_cust_id  WHERE ( true and a.id=35 ) LIMIT 1   [ RunTime:0.0030s ]
+
+[ 2016-03-08T08:55:22+08:00 ] 127.0.0.1 /Guest/invest/cancelInvest?q=1457398522571
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0070s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0070s ]
+SQL: SELECT a.* FROM otc_cf_ivs a INNER JOIN otc_cf_mast b on a.cod_cf_id = b.id  WHERE a.id = 35 AND a.cod_ivs_status = 0 LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `otc_cf_ivs` SET `cod_ivs_status`='-1',`dat_modify`='2016-03-08 08:55:22',`usr_modify`='1' WHERE `id` = 35 AND `cod_ivs_status` = 0 [ RunTime:0.0270s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ctl` [ RunTime:0.0090s ]
+SQL: UPDATE `otc_cf_ctl` SET `amt_ct_last`=amt_ct_last+200000.00 WHERE `id` = 86 [ RunTime:0.0180s ]
+SQL: UPDATE `otc_cf_ivs` SET `dat_modify`='2016-03-08 08:55:22',`usr_modify`='1' WHERE `id` = 35 AND `cod_ivs_status` = 0 [ RunTime:0.0020s ]
+
+[ 2016-03-08T08:55:24+08:00 ] 127.0.0.1 /Guest/cust/getcustinfo?q=1457398523983
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_cust_person` [ RunTime:0.0070s ]
+SQL: SELECT `cod_cust_id`,`nam_cust_real`,`cod_cust_id_no`,`tel`,`add_time`,`dat_modify` FROM `otc_cust_person` WHERE ( cod_cust_id = '63' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_cust_crm` [ RunTime:0.0060s ]
+SQL: SELECT `address`,`bizcode` FROM `otc_cust_crm` WHERE ( cod_cust_id=63 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_cf_ivs` WHERE `cod_cust_id` = 63 AND `cod_ivs_status` = 0 AND `usr_create` = 1 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-08T08:55:28+08:00 ] 127.0.0.1 /Guest/Invest/doInvest?q=1457398527582
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_cust_person` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `otc_cust_person` WHERE ( cod_cust_id = '63' and password = 'MTIzNDU2' ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0080s ]
+SQL: SELECT a.*,b.otc_code,b.investment_type FROM otc_cf_mast a inner JOIN otc_capitalpool b on a.capitalid = b.id  WHERE a.cod_cf_status = 1 AND a.cod_is_delete = 0 AND a.id = 92 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ctl` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `otc_cf_ctl` WHERE `id` = 86 AND `cf_mast_id` = 92 ORDER BY cod_period desc LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `otc_cf_ctl` SET `amt_ct_last`=amt_ct_last - 200000,`ctr_ct_last`=ctr_ct_last - 1,`ctr_ct_finish`=floor((1-(amt_ct_last/amt_ct))*100) WHERE `id` = 86 AND `ctr_ct_last` >= '1' AND `amt_ct_last` >= '200000' [ RunTime:0.0310s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0110s ]
+SQL: SELECT a.total_amount,a.surplus_amount,sum(c.amt_ct) as shiyong,(a.total_amount- sum(c.amt_ct) ) as shengyu,b.each_amt,b.* FROM otc_capitalpool a inner JOIN otc_cf_mast b on a.id =b.capitalid inner JOIN otc_cf_ctl c  on b.id = c.cf_mast_id  WHERE b.id = '92' LIMIT 1   [ RunTime:0.0030s ]
+SQL: SELECT * FROM `otc_cf_ctl` WHERE `id` = 86 AND `cf_mast_id` = 92 ORDER BY cod_period desc LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `otc_cf_ctl` SET `ctr_ct_finish`=100 WHERE ( id = 86 and (amt_ct_last < 200000.00 or ctr_ct_last < 1 ) ) [ RunTime:0.0240s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0110s ]
+SQL: SELECT * FROM otc_cf_mast a inner JOIN otc_capitalpool b on b.cf_mast_id = a.id  WHERE a.id = '92' AND b.status = 2 AND b.surplus_amount  > a.amt_cf_inv_min AND b.id  <> a.capitalid ORDER BY b.dat_modify asc LIMIT 1   [ RunTime:0.0030s ]
+SQL: INSERT INTO `otc_cf_ctl` (`cf_mast_id`,`type`,`cod_period`,`capitalid`,`amt_ct`,`amt_ct_last`,`ctr_ct`,`ctr_ct_last`,`ctr_ct_finish`,`dat_modify`) VALUES ('92','0','2','2','40000000.00','40000000.00','200','0','101','2016-03-08 08:55:27') [ RunTime:0.0370s ]
+SQL: SHOW COLUMNS FROM `otc_capitalpool` [ RunTime:0.0120s ]
+SQL: UPDATE `otc_capitalpool` SET `surplus_amount`=surplus_amount-40000000.00 WHERE ( status = 2 and id='2' and investment_type='2' and surplus_amount >= '40000000.00'  and 334 = (SELECT id FROM `otc_cf_ctl`  where cf_mast_id =92 and capitalid = 2   order by cod_period desc,id asc limit 1)  ) [ RunTime:0.0020s ]
+SQL: DELETE FROM `otc_cf_ctl` WHERE `id` = 334 [ RunTime:0.0790s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `otc_capitalpool` WHERE ( id='2' and investment_type='2' and surplus_amount >= '40000000.00' and surplus_amount >'200000.00'    ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `otc_cf_ivs` (`cod_cf_id`,`cod_ctl_id`,`cod_cust_id`,`ivs_order`,`capitalid`,`amt_ivs`,`amt_time`,`ctl_ivs_cnt`,`amt_int_total`,`amt_fee_total`,`product_code`,`rat_cf_inv_min`,`cod_ivs_type`,`cod_ivs_status`,`dat_create`,`usr_create`,`dat_modify`,`usr_modify`) VALUES ('92','86','63','00006320160308085528732649','2','200000','12','1','200000','200000','ZB002A001','8.50','2','0','2016-03-08 08:55:28','1','2016-03-08 08:55:28','1') [ RunTime:0.0240s ]
+
+[ 2016-03-08T08:55:28+08:00 ] 127.0.0.1 /Guest/Product/getThisDetail?q=1457398528058
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_cf_mast` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0060s ]
+SQL: SELECT a.*,b.nam_cust_real,b.cod_cust_id_no FROM otc_cf_ivs a INNER JOIN otc_cust_person b on a.cod_cust_id=b.cod_cust_id  WHERE ( true and a.id=36 ) LIMIT 1   [ RunTime:0.0030s ]
+
+[ 2016-03-08T08:56:34+08:00 ] 127.0.0.1 /Guest/invest/cancelInvest?q=1457398594580
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0080s ]
+SQL: SELECT a.* FROM otc_cf_ivs a INNER JOIN otc_cf_mast b on a.cod_cf_id = b.id  WHERE a.id = 36 AND a.cod_ivs_status = 0 LIMIT 1   [ RunTime:0.0030s ]
+SQL: UPDATE `otc_cf_ivs` SET `cod_ivs_status`='-1',`dat_modify`='2016-03-08 08:56:34',`usr_modify`='1' WHERE `id` = 36 AND `cod_ivs_status` = 0 [ RunTime:0.0220s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ctl` [ RunTime:0.0110s ]
+SQL: UPDATE `otc_cf_ctl` SET `amt_ct_last`=amt_ct_last+200000.00 WHERE `id` = 86 [ RunTime:0.0200s ]
+SQL: UPDATE `otc_cf_ivs` SET `dat_modify`='2016-03-08 08:56:34',`usr_modify`='1' WHERE `id` = 36 AND `cod_ivs_status` = 0 [ RunTime:0.0020s ]
+

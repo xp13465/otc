@@ -1,0 +1,38 @@
+<div class="group userLoginClass" ng-if="userLogin">
+	<div class="groupBg"></div>
+	<div class="groupCon">
+		<span class="del" ng-click="closeLoginFn()">
+			<img src="/Public/UI/images/desktop/del_01.png" alt="">
+		</span>
+		<div class="title cen">
+			<img src="/Public/UI/images/desktop/login.png" alt="">
+		</div>
+		<div ng-if="userLoginInfo.status == 0">
+			<ul class="ul">
+				<li class="clearfix noBorder">
+					<label>
+						用户证件
+					</label>
+					身份证
+				</li>
+				<li class="clearfix cur">
+					<label>
+						证件号码
+					</label>
+					<input type="text" autocomplete="off"  ng-model="login.cod_cust_id_no" placeholder="证件号码">
+				</li>
+				<li class="clearfix cur">
+					<label>
+						登录密码
+					</label>
+					<input type="password"  autocomplete="off"  ng-model="login.password" placeholder="登录密码" ng-keydown="submitFn($event)">
+				</li>
+			</ul>
+			<div class="btnBg">
+				<a href="javascript:;" class="btn" ng-click="loginFn();">
+					登录
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

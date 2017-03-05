@@ -1,0 +1,71 @@
+<div class="group productDocClass" ng-if="productDoc_reset">
+	<div class="groupBg"></div>
+	<div class="groupCon">
+		<span class="del" ng-click="closeproductDocFn_reset()">
+			<img src="/Public/UI/images/desktop/del_01.png" alt="">
+		</span>
+		<div class="con">
+			<ul class="ul">
+				<!-- <li class="clearfix noBorder">
+					<label class="label">
+						客户合同
+					</label>
+					<a target="_blank" ng-href="/guest/Invest/previewContractpdf?ivsid={{productDocObj.id}}">预览</a>
+					<a ng-href="/guest/Invest/downContractpdf?ivsid={{productDocObj.id}}">下载</a>
+				</li> -->
+				<li class="clearfix noBorder">
+					<label class="label">
+						用户姓名
+					</label>
+					{{productDocObj_reset.nam_cust_real}}
+				</li>
+				<li class="clearfix noBorder">
+					<label class="label">
+						身份证号
+					</label>
+					{{productDocObj_reset.cod_cust_id_no}}
+				</li>
+				<li class="clearfix noBorder">
+					<label class="label">
+						投资金额
+					</label>
+					{{productDocObj_reset.amt_int_total|addNumberData2}}元
+				</li>
+				<li class="clearfix cur">
+					<label class="label">
+						销售经理
+					</label>
+					<input type="text" ng-model="productDocObj_reset.redemption_sales" placeholder="销售经理">
+				</li>
+				<li class="clearfix cur">
+					<label class="label">
+						POS单号
+					</label>
+					<input type="text" ng-model="productDocObj_reset.redemption_order" placeholder="POS单号">
+				</li>
+				<li class="clearfix cur">
+					<label class="label">
+						客户密码
+					</label>
+					<input type="password" ng-model="productDocObj_reset.password" placeholder="客户密码">
+				</li>
+				<li class="clearfix noBorder">
+					<label class="label">
+						上传POS单
+					</label>
+					<div id="btnUploadImgs">选择文件</div>
+					<span class="returnImgClass" ng-if="productDocObj_reset.redemption_file">
+						<span>
+							<img alt="" ng-src="{{productDocObj_reset.redemption_file}}" ng-click="showBigImg(productDocObj_reset.redemption_file)">
+						</span>
+					</span>
+				</li>
+			</ul>
+			<div class="clearfix btn">
+				<a href="javascript:;" class="yes" ng-click="productDocGetFn_reset()">确认赎回</a>
+				<a href="javascript:;" class="no" ng-click="failproductDocFn_reset()">取消赎回</a>
+			</div>
+		</div>
+
+	</div>
+</div>

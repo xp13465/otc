@@ -1,0 +1,104 @@
+[ 2016-03-09T11:45:00+08:00 ] 127.0.0.1 /Guest/Invest/clivslist?q=1457495099860
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0440s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0080s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ivs_right` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_cf_ivs a INNER JOIN otc_cust_person b on a.cod_cust_id=b.cod_cust_id INNER JOIN otc_cf_mast c on a.cod_cf_id=c.id left JOIN otc_cf_ctl d on a.cod_ctl_id=d.id left JOIN otc_cf_ivs_right e on a.id=e.cf_ivs_id INNER JOIN otc_user as ou on ou.id=a.usr_create INNER JOIN otc_department as od on ou.department_id= od.id  WHERE ( operating = 1 and (a.cod_ivs_status = 1 or (a.cod_ivs_status = 2 and e.cf_ivs_redemption_id is not null))  ) LIMIT 1   [ RunTime:0.0770s ]
+SQL: SELECT od.name as department_name,ou.realname as user_name,a.id,a.cod_ctl_id,`cod_period`,a.amt_ivs,a.ctl_ivs_cnt,a.amt_int_total,a.amt_fee_total,a.pos_order,e.status,e.step,a.dat_modify,e.qqh_file,IFNULL(e.cf_ivs_redemption_id,0) as cf_ivs_redemption_id,c.title,c.code,d.cod_period,b.nam_cust_real,b.cod_cust_id_no FROM otc_cf_ivs a INNER JOIN otc_cust_person b on a.cod_cust_id=b.cod_cust_id INNER JOIN otc_cf_mast c on a.cod_cf_id=c.id left JOIN otc_cf_ctl d on a.cod_ctl_id=d.id left JOIN otc_cf_ivs_right e on a.id=e.cf_ivs_id INNER JOIN otc_user as ou on ou.id=a.usr_create INNER JOIN otc_department as od on ou.department_id= od.id  WHERE ( operating = 1 and (a.cod_ivs_status = 1 or (a.cod_ivs_status = 2 and e.cf_ivs_redemption_id is not null))  ) ORDER BY a.dat_modify desc LIMIT 0,10   [ RunTime:0.0220s ]
+
+[ 2016-03-09T11:45:01+08:00 ] 127.0.0.1 /Guest/Invest/getRightSchedule?q=1457495101794
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0090s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0070s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `otc_cf_ivs_right_log` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ivs_right` [ RunTime:0.0050s ]
+SQL: SELECT cirl.dat_create,cirl.error_msg FROM otc_cf_ivs_right cir INNER JOIN otc_cf_ivs_right_log as cirl on cirl.ivs_right_id=cir.id  WHERE ( cir.cf_ivs_id=26 )  [ RunTime:0.0370s ]
+
+[ 2016-03-09T11:45:01+08:00 ] 127.0.0.1 /Guest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-09T11:45:02+08:00 ] 127.0.0.1 /guest/access/getUserNodeList?q=1457495102404
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_node` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.node_id,n.name,n.pid,n.module,n.iconCls,n.group,n.url FROM otc_auth_role_node as r INNER JOIN otc_auth_node as n on n.id = r.node_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80') AND n.type = 2 ORDER BY n.sort asc, n.id desc  [ RunTime:0.0020s ]
+
+[ 2016-03-09T11:45:03+08:00 ] 127.0.0.1 /Guest/Invest/clivslist?q=1457495103473
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `otc_auth_access` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`module-controller-action`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0070s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given D:\WEB\192.168.1.126\otc\Application\Guest\Controller\InvestController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `otc_user` [ RunTime:0.0060s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+SQL: SELECT `role_id` FROM `otc_auth_access` WHERE ( uid = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `otc_auth_role_permission` [ RunTime:0.0050s ]
+SQL: SELECT DISTINCT r.permission_id,n.permission_name,lower(n.`permission_code`) as permission_code FROM otc_auth_role_permission as r INNER JOIN otc_auth_permission as n on n.permission_id = r.permission_id  WHERE r.role_id IN ('65','73','70','69','68','67','66','77','76','75','74','78','79','82','81','80')  [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ivs_right` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `otc_cf_ivs` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM otc_cf_ivs a INNER JOIN otc_cust_person b on a.cod_cust_id=b.cod_cust_id INNER JOIN otc_cf_mast c on a.cod_cf_id=c.id left JOIN otc_cf_ctl d on a.cod_ctl_id=d.id left JOIN otc_cf_ivs_right e on a.id=e.cf_ivs_id INNER JOIN otc_user as ou on ou.id=a.usr_create INNER JOIN otc_department as od on ou.department_id= od.id  WHERE ( operating = 1 and (a.cod_ivs_status = 1 or (a.cod_ivs_status = 2 and e.cf_ivs_redemption_id is not null))  ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT od.name as department_name,ou.realname as user_name,a.id,a.cod_ctl_id,`cod_period`,a.amt_ivs,a.ctl_ivs_cnt,a.amt_int_total,a.amt_fee_total,a.pos_order,e.status,e.step,a.dat_modify,e.qqh_file,IFNULL(e.cf_ivs_redemption_id,0) as cf_ivs_redemption_id,c.title,c.code,d.cod_period,b.nam_cust_real,b.cod_cust_id_no FROM otc_cf_ivs a INNER JOIN otc_cust_person b on a.cod_cust_id=b.cod_cust_id INNER JOIN otc_cf_mast c on a.cod_cf_id=c.id left JOIN otc_cf_ctl d on a.cod_ctl_id=d.id left JOIN otc_cf_ivs_right e on a.id=e.cf_ivs_id INNER JOIN otc_user as ou on ou.id=a.usr_create INNER JOIN otc_department as od on ou.department_id= od.id  WHERE ( operating = 1 and (a.cod_ivs_status = 1 or (a.cod_ivs_status = 2 and e.cf_ivs_redemption_id is not null))  ) ORDER BY a.dat_modify desc LIMIT 0,10   [ RunTime:0.0050s ]
+

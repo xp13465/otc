@@ -1,0 +1,83 @@
+<div class="group userInfolistClass" ng-if="manageRight">
+	<div class="groupBg"></div>
+	<div class="groupCon">
+		<span class="del" ng-click="closemRigchaseFn()">
+			<img src="/Public/UI/images/desktop/del_01.png" alt="">
+		</span>
+		<div class="tit clearfix">
+			<img src="/Public/UI/images/desktop/right.png" alt="">
+			<span>
+				确权管理
+			</span>
+		</div>
+		<div class="nav">
+			<div class="search">
+				<input type="text" class="input" placeholder="请输入关键字搜索(用户姓名、身份证号)" ng-model="mRigdataTimeList.keywordText">
+				<a href="javascript:;" class="btn" ng-click="mRigsearchListFn()"></a>
+			</div>
+			<span>成交时间:</span>
+			<select ng-model="mRigdataTimeList.mRigTimeNodeCurrent" class="select" ng-options="data.id as data.name for data in mPurTimeNode" ng-change="mRigTimes(mRigdataTimeList.mRigTimeNodeCurrent)">
+			</select>
+			<span>确权状态:</span>
+			<select ng-model="mRigdataTimeList.mRigStatusNodeCurrent" class="select" ng-options="data.id as data.name for data in mRigStatusNode" ng-change="mRigStatus(mRigdataTimeList.mRigStatusNodeCurrent)">
+			</select>
+		</div>
+		<div class="list">
+			<table width="950" border="0" cellspacing="0" cellpadding="0" class="table">
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>客户姓名</th>
+						<th>身份证号</th>
+						<th>投资标的</th>
+						<th>投资金额</th>
+						<th>成交时间</th>
+						<th>确权状态</th>
+						<th>确权进度</th>
+						<th>所属门店</th>
+						<th>录入人</th>
+						<th>操作</th>
+						<th>确权函</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr  ng-repeat = "iteam in mRigIteams" ng-class="{'even': !$even}">
+						<td>{{$index + 1}}</td>
+						<td>{{iteam.nam_cust_real}}</td>
+						<td>{{iteam.cod_cust_id_no}}</td>
+						<td>{{iteam.product_code}}</td>
+						<td>{{iteam.amt_int_total}}元</td>
+						<td>{{iteam.dat_modify}}</td>
+						<td ng-if="iteam.cf_ivs_redemption_id == 0"  ng-switch on="iteam.status" >
+							<span ng-switch-when="1">确权中</span>
+							<span ng-switch-when="2">确权成功</span>
+							<span ng-switch-when="3">确权失败</span>
+							<span ng-switch-when="0">待确权</span>
+						</td>
+						<td ng-if="iteam.cf_ivs_redemption_id != 0"  ng-switch on="iteam.status" >
+							<span ng-switch-when="1">赎回中</span>
+							<span ng-switch-when="2">赎回成功</span>
+							<span ng-switch-when="3">赎回失败</span>
+						</td>
+						<td ng-click="showSpeedRightFn(iteam.id)" class="point"  ng-if="iteam.status != 0">查看</td>
+						<td class="down_td"  ng-if="iteam.status == 0">查看</td>
+						<td>{{iteam.department_name}}</td>
+						<td>{{iteam.user_name}}</td>
+						<td ng-switch on="iteam.status" ng-class="{'down_td':iteam.status !=3}">
+							<a ng-switch-when="3" ng-click="againRightFn(iteam.id)" href="javascript:;">重新确权</a>
+							<span ng-switch-default >重新确权</span>
+						</td>
+						<td ng-if="iteam.status != 2" ng-class="{'down_td':iteam.status !=2}"><i class="down"></i>下载</td>
+						<td ng-if="iteam.status == 2">
+							<a ng-href="{{iteam.qqh_file}}" target="_blank">
+								<i class="down"></i>下载
+							<a>
+						</td>
+	
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<tm-pagination conf="paginationConf" class="clearfix zbPageClass"></tm-pagination>
+	</div>
+</div>
